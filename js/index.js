@@ -104,4 +104,11 @@ function verServicios() {
   console.clear();
 }
 
+//        PROGRAMA
+let name = prompt("Bienvenido, ingrese su nombre");
+while (name === "") {
+    name = prompt("Por favor, ingresa tu nombre");
+}
+alert("Bienvenido " + name);
+
 menu();
