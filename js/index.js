@@ -76,22 +76,39 @@ function menu() {
 }
 
 const sumar = (a, b) => a + b;
-
-const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
-const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
-const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
-const servicio1 = new Servicio(1, "Limpieza", 129);
-const servicio2 = new Servicio(2, "Premium", 200);
-
-function verSombreros() {
-  sombrero1.describir();
-  sombrero2.describir();
-  sombrero3.describir();
-  alert("Recuerda que todos los sombreros con precio mayor a 250 tienen descuento del 10%");
-  let precio = parseInt(prompt("Ingresa el precio del sombrero que quieres"));
+const descuento =(precio)=> {
   if(precio>250){
     precio =precio-precio*0.10;
   }
+  return precio
+}
+// * objetos, producto y array
+const sombreros =[];
+const servicios =[];
+const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
+const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
+const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
+sombreros.push(sombrero1,sombrero2,sombrero3);
+const servicio1 = new Servicio(1, "Limpieza", 129);
+const servicio2 = new Servicio(2, "Premium", 200);
+servicios.push(servicio1,servicio2);
+
+
+function verSombreros() {
+  for(const i of sombreros){
+    i.describir();
+  }  
+  alert("Recuerda que todos los sombreros con precio mayor a 250 tienen descuento del 10%");
+  let precio;
+  let id = parseInt(prompt("Ingresa el id del sombrero que quieres"));
+  const pos = sombreros.map(e => e.id).indexOf(id);
+  if(pos==-1){
+    alert("El sombrero no existe");
+    precio=0;
+  }else{
+    precio = descuento(sombreros[pos].precio);
+  }
+  
   total = sumar(total, precio);
   console.clear();
 }
