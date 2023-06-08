@@ -49,7 +49,8 @@ function menu() {
     console.log("2. Ver y comprar servicios:");
     console.log("3. Ver total de la cuenta:");
     console.log("4. Reiniciar cuenta:");
-    console.log("5. Salir:");
+    console.log("5. Aplicar IVA a los precios:");
+    console.log("6. Salir:");
     opcion = parseInt(prompt("Ingresa un número"));
     console.clear();
     switch (opcion) {
@@ -67,31 +68,18 @@ function menu() {
         total = 0;
         break;
       case 5:
-        alert("Regresa pronto.");
+        aplicarIVA(sombreros);
+        aplicarIVA(servicios);
+        break;
+      case 6:
+        alert("Regresa pronto");
         break;
       default:
         alert("Te equivocaste, vuelve a intentar.");
         break;
     }
-  } while (opcion != 5);
+  } while (opcion != 6);
 }
-const sumar = (a, b) => a + b;
-const descuento = (precio) => {
-  if (precio > 250) {
-    precio = precio - precio * 0.1;
-  }
-  return precio;
-};
-// * objetos, productos y arrays
-const sombreros = [];
-const servicios = [];
-const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
-const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
-const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
-sombreros.push(sombrero1, sombrero2, sombrero3);
-const servicio1 = new Servicio(1, "Limpieza", 129);
-const servicio2 = new Servicio(2, "Premium", 200);
-servicios.push(servicio1, servicio2);
 
 function verSombreros() {
   for (const i of sombreros) {
@@ -136,6 +124,31 @@ function comprarServicios() {
   total = sumar(total, precio);
   console.clear();
 }
+
+function aplicarIVA(arr) {
+  arr.forEach((el) => {
+    el.precio = el.precio + el.precio * 0.16;
+  });
+}
+// * Funciones flecha
+const sumar = (a, b) => a + b;
+const descuento = (precio) => {
+  if (precio > 250) {
+    precio = precio - precio * 0.1;
+  }
+  return precio;
+};
+
+// * objetos, productos y arrays
+const sombreros = [];
+const servicios = [];
+const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
+const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
+const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
+sombreros.push(sombrero1, sombrero2, sombrero3);
+const servicio1 = new Servicio(1, "Limpieza", 129);
+const servicio2 = new Servicio(2, "Premium", 200);
+servicios.push(servicio1, servicio2);
 
 //        PROGRAMA
 let name = prompt("Bienvenido, ingrese su nombre");
