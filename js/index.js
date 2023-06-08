@@ -45,8 +45,8 @@ class Servicio {
 function menu() {
   do {
     alert("Abre la consola");
-    console.log("1. Ver sombreros:");
-    console.log("2. Comprar servicio:");
+    console.log("1. Ver y comprar sombreros:");
+    console.log("2. Ver y comprar servicios:");
     console.log("3. Ver total de la cuenta:");
     console.log("4. Reiniciar cuenta:");
     console.log("5. Salir:");
@@ -76,36 +76,41 @@ function menu() {
   } while (opcion != 5);
 }
 const sumar = (a, b) => a + b;
-const descuento =(precio)=> {
-  if(precio>250){
-    precio =precio-precio*0.10;
+const descuento = (precio) => {
+  if (precio > 250) {
+    precio = precio - precio * 0.1;
   }
-  return precio
-}
+  return precio;
+};
 // * objetos, productos y arrays
-const sombreros =[];
-const servicios =[];
+const sombreros = [];
+const servicios = [];
 const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
 const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
 const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
-sombreros.push(sombrero1,sombrero2,sombrero3);
+sombreros.push(sombrero1, sombrero2, sombrero3);
 const servicio1 = new Servicio(1, "Limpieza", 129);
 const servicio2 = new Servicio(2, "Premium", 200);
-servicios.push(servicio1,servicio2);
-
+servicios.push(servicio1, servicio2);
 
 function verSombreros() {
-  for(const i of sombreros){
+  for (const i of sombreros) {
     i.describir();
-  }  
-  alert("Recuerda que todos los sombreros con precio mayor a 250 tienen descuento del 10%");
+  }
+  comprarSombreros();
+}
+
+function comprarSombreros() {
+  alert(
+    "Recuerda que todos los sombreros con precio mayor a 250 tienen descuento del 10%"
+  );
   let precio;
   let id = parseInt(prompt("Ingresa el id del sombrero que quieres"));
-  const sombrero = sombreros.find((el)=>el.id===id);
-  if(sombrero===undefined){
+  const sombrero = sombreros.find((el) => el.id === id);
+  if (sombrero === undefined) {
     alert("El sombrero no existe");
-    precio=0;
-  }else{
+    precio = 0;
+  } else {
     precio = descuento(sombrero.precio);
   }
   total = sumar(total, precio);
@@ -113,15 +118,19 @@ function verSombreros() {
 }
 
 function verServicios() {
-  for(const i of servicios){
+  for (const i of servicios) {
     i.describir();
   }
+  comprarServicios();
+}
+
+function comprarServicios() {
   let id = parseInt(prompt("Ingresa el id del servicio que quieres"));
-  const servicio = servicios.find((el)=>el.id===id);
-  if(servicio===undefined){
+  const servicio = servicios.find((el) => el.id === id);
+  if (servicio === undefined) {
     alert("El sombrero no existe");
-    precio=0;
-  }else{
+    precio = 0;
+  } else {
     precio = servicio.precio;
   }
   total = sumar(total, precio);
@@ -131,7 +140,7 @@ function verServicios() {
 //        PROGRAMA
 let name = prompt("Bienvenido, ingrese su nombre");
 while (name === "") {
-    name = prompt("Por favor, ingresa tu nombre");
+  name = prompt("Por favor, ingresa tu nombre");
 }
 alert("Bienvenido " + name);
 
