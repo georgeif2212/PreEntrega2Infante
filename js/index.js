@@ -1,5 +1,6 @@
 let opcion;
 let total = 0;
+const opcionSalir = 8;
 class Sombrero {
   constructor(id, color, talla, tipo, precio) {
     this.id = id;
@@ -43,14 +44,14 @@ class Servicio {
 
 // * Funciones
 function menu() {
+  console.log("Hola");
   do {
     alert("Abre la consola");
-    console.log("1. Ver y comprar sombreros:");
-    console.log("2. Ver y comprar servicios:");
-    console.log("3. Ver total de la cuenta:");
-    console.log("4. Reiniciar cuenta:");
-    console.log("5. Aplicar IVA a los precios:");
-    console.log("6. Salir:");
+    alert(
+      "1. Ver sombreros:\n2. Ver servicios:\n3. Ver total de la cuenta:\n" +
+        "4. Reiniciar cuenta:\n5. Aplicar IVA a los precios:\n6. Ver todos los productos\n" +
+        "7. Filtrar productos por precio:\n8. Salir:"
+    );
     opcion = parseInt(prompt("Ingresa un número"));
     console.clear();
     switch (opcion) {
@@ -72,20 +73,33 @@ function menu() {
         aplicarIVA(servicios);
         break;
       case 6:
+        showProducts(productos);
+        break;
+      case 7:
+        filtrar();
+        break;
+      case 8:
         alert("Regresa pronto");
         break;
       default:
         alert("Te equivocaste, vuelve a intentar.");
         break;
     }
-  } while (opcion != 6);
+  } while (opcion != opcionSalir);
 }
 
 function verSombreros() {
   for (const i of sombreros) {
     i.describir();
   }
-  comprarSombreros();
+  let answer = parseInt(
+    prompt(
+      "Ingresa 1 si quieres comprar sombreros, si no, ingresa cualquier otro número"
+    )
+  );
+  if (answer == 1) {
+    comprarSombreros();
+  }
 }
 
 function comprarSombreros() {
@@ -105,11 +119,31 @@ function comprarSombreros() {
   console.clear();
 }
 
+function showProducts(array) {
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i];
+    if (Array.isArray(element)) {
+      for (let j = 0; j < element.length; j++) {
+        element[j].describir();
+      }
+    } else {
+      element.describir();
+    }
+  }
+}
+
 function verServicios() {
   for (const i of servicios) {
     i.describir();
   }
-  comprarServicios();
+  let answer = parseInt(
+    prompt(
+      "Ingresa 1 si quieres comprar algún servicio, si no, ingresa cualquier otro número"
+    )
+  );
+  if (answer == 1) {
+    comprarServicios();
+  }
 }
 
 function comprarServicios() {
@@ -125,11 +159,39 @@ function comprarServicios() {
   console.clear();
 }
 
+function filtrar() {
+  let answer;
+  let precio;
+  answer = parseInt(
+    prompt("1: Filtrar elementos sombreros, 2: Filtrar elementos servicios")
+  );
+  if (answer == 1) {
+    showProducts(sombreros);
+    precio = parseInt(
+      prompt("¿Con que precio quieres filtrar a los sombreros")
+    );
+    filter(precio, sombreros);
+  } else {
+    showProducts(servicios);
+    precio = parseInt(
+      prompt("¿Con que precio quieres filtrar a los servicios")
+    );
+    filter(precio, servicios);
+  }
+}
+
+function filter(precio, array) {
+  const filtrado = array.filter((el) => el.precio <= precio);
+  console.clear();
+  showProducts(filtrado);
+}
+
 function aplicarIVA(arr) {
   arr.forEach((el) => {
     el.precio = el.precio + el.precio * 0.16;
   });
 }
+
 // * Funciones flecha
 const sumar = (a, b) => a + b;
 const descuento = (precio) => {
@@ -142,15 +204,20 @@ const descuento = (precio) => {
 // * objetos, productos y arrays
 const sombreros = [];
 const servicios = [];
+const productos = [];
 const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
 const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
 const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
-sombreros.push(sombrero1, sombrero2, sombrero3);
+const sombrero4 = new Sombrero(4, "Rojo", 46, "Porkpie", 200);
+const sombrero5 = new Sombrero(5, "Cafe", 40, "Canotier Veneciano", 249);
+sombreros.push(sombrero1, sombrero2, sombrero3, sombrero4, sombrero5);
 const servicio1 = new Servicio(1, "Limpieza", 129);
 const servicio2 = new Servicio(2, "Premium", 200);
-servicios.push(servicio1, servicio2);
+const servicio3 = new Servicio(3, "Brillo", 130);
+servicios.push(servicio1, servicio2, servicio3);
+productos.push(sombreros, servicios);
 
-//        PROGRAMA
+// ! PROGRAMA
 let name = prompt("Bienvenido, ingrese su nombre");
 while (name === "") {
   name = prompt("Por favor, ingresa tu nombre");
@@ -158,3 +225,4 @@ while (name === "") {
 alert("Bienvenido " + name);
 
 menu();
+
