@@ -1,0 +1,20 @@
+.footer {
+  background-color: $footer-bg-color;
+  color: $font-color;
+  .social-links {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .copyright {
+    border-top: 1px solid #ddd9cc;
+    border-bottom: 1px solid #ddd9cc;
+  }
+  &-links {
+    ul {
+      
+      li {
+        padding-left: 0.8rem;
+      }
+    }
+  }
+}

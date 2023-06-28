@@ -1,0 +1,289 @@
+@media screen and (max-width: 767px) {
+  main {
+    color: black;
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url("../../svg/stacked-waves-haikei.svg") center center;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-intro {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        &_title {
+          font-family: "Raleway", "Open-sans";
+        }
+        &_subtitle {
+          font-family: "Raleway", "Open-sans";
+        }
+      }
+    }
+    .featured-products {
+      padding-top: 2em;
+      padding-bottom: 2em;
+      border-top: 1px solid #ddd9cc;
+      .splide__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        &:last-child {
+          margin-right: 0; /* Eliminar el espacio después de la última imagen */
+        }
+        & img {
+          border-radius: 5px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .newsletter {
+      padding: 1rem 0;
+      border-top: 1px solid #ddd9cc;
+      border-bottom: 1px solid #ddd9cc;
+      display: flex;
+      flex-flow: column;
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .rated-products {
+      
+      border-bottom: 1px solid #ddd9cc;
+      &-product {
+        overflow: hidden;
+        &_img {
+          width: 100%;
+          height: auto;
+          border-top: 10px;
+        }
+        &_info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding-left: 1rem;
+        }
+        .best{
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        
+        }
+      }
+    }
+    .aboutUs {
+      border-top: 1px solid #ddd9cc;
+      border-bottom: 1px solid #ddd9cc;
+      h2 {
+        display: flex;
+        justify-content: center;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 767px)and (max-width:1023px) {
+  main {
+    color: black;
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url("../../svg/stacked-waves-haikei.svg") center center;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-intro {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        &_title {
+          font-family: "Raleway", "Open-sans";
+        }
+        &_subtitle {
+          font-family: "Raleway", "Open-sans";
+        }
+      }
+    }
+    .featured-products {
+      padding-top: 2em;
+      padding-bottom: 2em;
+      border-top: 1px solid #ddd9cc;
+      .splide__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        &:last-child {
+          margin-right: 0; /* Eliminar el espacio después de la última imagen */
+        }
+        & img {
+          border-radius: 5px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .newsletter {
+      padding: 1rem 0;
+      border-top: 1px solid #ddd9cc;
+      border-bottom: 1px solid #ddd9cc;
+      display: flex;
+      flex-flow: column;
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .rated-products {
+      
+      border-bottom: 1px solid #ddd9cc;
+      &-product {
+        overflow: hidden;
+        &_img {
+          width: 100%;
+          height: auto;
+          border-top: 10px;
+        }
+        &_info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .rate{
+            align-self: flex-end;
+          }
+        }
+        .best{
+          width: 100%;
+          height: 420px;
+          object-fit: cover;
+        
+        }
+      }
+    }
+    .aboutUs {
+      border-top: 1px solid #ddd9cc;
+      border-bottom: 1px solid #ddd9cc;
+      h2 {
+        display: flex;
+        justify-content: center;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 0 5rem;
+      }
+    }
+  }
+}
+@media screen and (min-width:1023px) {
+  main {
+    color: black;
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: url("../../svg/stacked-waves-haikei.svg") center center;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-intro {
+        padding: 2rem;
+  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        &_title {
+          font-family: "Raleway", "Open-sans";
+        }
+        &_subtitle {
+          font-family: "Raleway", "Open-sans";
+        }
+      }
+    }
+    .featured-products {
+      padding-top: 2em;
+      padding-bottom: 2em;
+      border-top: 1px solid #ddd9cc;
+      .splide__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+        &:last-child {
+          margin-right: 0; /* Eliminar el espacio después de la última imagen */
+        }
+        & img {
+          border-radius: 5px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .newsletter {
+      padding: 1rem 0;
+      border-top: 1px solid #ddd9cc;
+      border-bottom: 1px solid #ddd9cc;
+      display: flex;
+      flex-flow: row;
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+      
+    }
+    .rated-products {
+      padding: 0em 0.5rem;
+      border-bottom: 1px solid #ddd9cc;
+      &-product {
+        &_img {
+          width: 100%;
+          height: auto;
+          border-top: 10px;
+        }
+        &_info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+    }
+    .aboutUs {
+      border-top: 1px solid #ddd9cc;
+      border-bottom: 1px solid #ddd9cc;
+      h2 {
+        display: flex;
+        justify-content: center;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 0 12rem;
+      }
+    }
+  }  
+}
+
+

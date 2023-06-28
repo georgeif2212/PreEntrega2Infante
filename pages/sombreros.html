@@ -21,7 +21,7 @@
     <!--------ANIMACIÓN AOS ---------->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!--------LINK CSS STYLES---------->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <!--------MERTA DESCRIPTION ROBOTS---------->
     <meta
       name="description"
@@ -47,7 +47,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand mb-0 h1" href="./index.html"
+            <a class="navbar-brand mb-0 h1" href="../index.html"
               >LOS 3 VAQUEROS</a
             >
             <button
@@ -81,15 +81,12 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="./index.html"
+                    <a class="nav-link" aria-current="page" href="../index.html"
                       >Inicio</a
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./pages/sombreros.html"
+                    <a class="nav-link active" href="./pages/sombreros.html"
                       >Sombreros</a
                     >
                   </li>
@@ -156,98 +153,60 @@
         </nav>
       </div>
     </header>
+
     <main>
-      <section class="container-fluid hero mb-5">
+      <section class="container-fluid hero-categories mb-3">
         <article class="hero-intro">
-          <h1 class="size-large_l color-1 hero-intro_title">
-            Bienvenido a Vaqueros
-          </h1>
-          <h2 class="size-large_s color-2 hero-intro_subtitle">
-            Tu objetivo en un solo click
-          </h2>
-          <a href="#objetivo" class="btn-get-started">¡Estoy listo!</a>
+          <div class="titulo-container">
+            <h1 class="titulo size-large_s color-1">
+              Tagline describing your e-shop
+            </h1>
+          </div>
+          <div class="search-hats d-flex justify-content-center">
+            <input
+              class="form-control me-2"
+              type="search-hats_input"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <input class="search-hats_button" value="Search" type="submit" />
+          </div>
         </article>
       </section>
 
-      <section class="container-fluid featured-products splide mb-5">
-        <div class="container">
-          <h2 class="subtitle color-1 size-large_s">Featured products</h2>
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured1.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 1</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured2.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 2</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured3.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 3</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured4.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 4</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured5.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 5</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured7.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 6</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured7.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 7</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured8.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 8</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-            </ul>
-          </div>
+      <section class="container-fluid">
+        <div class="featured-categories pb-5">
+          <h2 class="color-1 size-large_s text-center">Featured categories</h2>
+          <p class="color-2 text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+            qui, quos voluptatum obcaecati illo ducimus mollitia
+          </p>
+          <class class="container categories">
+            <a href="">
+              <article class="categories-category">
+                <img src="../img/category-1.jpg" alt="" />
+                <h3 class="color-1 size-medium_m">Caballero</h3>
+              </article>
+            </a>
+            <a href="">
+              <article class="categories-category">
+                <img src="../img/category-2.jpg" alt="" />
+                <h3 class="color-1 size-medium_m">Niño</h3>
+              </article>
+            </a>
+            <a href="">
+              <article class="categories-category">
+                <img src="../img/category-3.jpg" alt="" />
+                <h3 class="color-1 size-medium_m">Dama</h3>
+              </article>
+            </a>
+            <a href="">
+              <article class="categories-category">
+                <img src="../img/category-4.jpg" alt="" />
+                <h3 class="color-1 size-medium_m">Invierno</h3>
+              </article>
+            </a>
+          </class>
         </div>
       </section>
 
@@ -280,165 +239,37 @@
         </div>
       </section>
 
-      <section class="container-fluid px-lg-5">
-        <div class="row py-5 px-3">
-          <div class="col-lg-4 col-md-4 col-12 pb-4">
-            <div class="rated-products">
-              <article class="rated-products-product box-shadow">
-                <img
-                  src="./img/rated-1.jpg"
-                  class="rated-products-product_img best"
-                  alt=""
-                  
-                />
-                <div class="rated-products-product_info px-lg-3 px-md-2">
-                  <div>
-                    <p class="products_name pt-2 color-1 size-medium_s">
-                      Producto 1
-                    </p>
-                    <p class="products_price color-2 size-small_l">$300</p>
-                  </div>
-                  <div class="rate">
-                    <input type="radio" id="star5" name="rate" value="5" />
-                    <label for="star5" title="text">5 stars</label>
-                    <input type="radio" id="star4" name="rate" value="4" />
-                    <label for="star4" title="text">4 stars</label>
-                    <input type="radio" id="star3" name="rate" value="3" />
-                    <label for="star3" title="text">3 stars</label>
-                    <input type="radio" id="star2" name="rate" value="2" />
-                    <label for="star2" title="text">2 stars</label>
-                    <input type="radio" id="star1" name="rate" value="1" />
-                    <label for="star1" title="text">1 star</label>
-                  </div>
+      <section class="grid-container">
+        <div class="grid-container-1">
+          <h3 class="color-2 size-large_s">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </h3>
+          <p class="color-2 size-medium_s">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis
+            incidunt sapiente ipsam voluptas hic? Pariatur?
+          </p>
+          <button></button>
+        </div>
+        <div class="grid-container-2">
+          <div class="column">
+            <a href="">
+              <article class="">
+                <img src="../img/producto1.jpg" alt="" />
+                <div>
+                  <p class="color-1 size-medium_m">Producto</p>
+                  <p class="products_price color-2 size-small_l">$200</p>
                 </div>
               </article>
-            </div>
+            </a>
           </div>
-
-          <div class="col-lg-4 col-md-4 col-12 pb-4">
-            <article class="rated-products-product box-shadow mb-4">
-              <img
-                src="./img/rated-2.jpg"
-                class="rated-products-product_img"
-                alt=""
-              />
-              <div class="rated-products-product_info px-lg-3 px-md-2">
-                <div>
-                  <p class="products_name pt-2 color-1 size-medium_s">
-                    Producto 2
-                  </p>
-                  <p class="products_price color-2 size-small_l">$300</p>
-                </div>
-                <div class="rate">
-                  <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">1 star</label>
-                </div>
-              </div>
-            </article>
-            <article class="rated-products-product box-shadow">
-              <img
-                src="./img/rated-5.jpg"
-                class="rated-products-product_img"
-                alt=""
-              />
-              <div class="rated-products-product_info px-lg-3 px-md-2">
-                <div>
-                  <p class="products_name pt-2 color-1 size-medium_s">
-                    Producto 3
-                  </p>
-                  <p class="products_price color-2 size-small_l">$300</p>
-                </div>
-                <div class="rate">
-                  <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">1 star</label>
-                </div>
-              </div>
-            </article>
+          <div class="column">
+            <a href="">
+              <article class="">
+                <img src="../img/producto2.jpg" alt="" />
+                <p class="color-1 size-medium_m">Dama</p>
+              </article>
+            </a>
           </div>
-          <div class="col-lg-4 col-md-4 col-12 pb-4">
-            <article class="rated-products-product box-shadow  mb-4">
-              <img
-                src="./img/rated-3.jpg"
-                class="rated-products-product_img"
-                alt=""
-              />
-              <div class="rated-products-product_info px-lg-3 px-md-2">
-                <div>
-                  <p class="products_name pt-2 color-1 size-medium_s">
-                    Producto 4
-                  </p>
-                  <p class="products_price color-2 size-small_l">$300</p>
-                </div>
-                <div class="rate">
-                  <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">1 star</label>
-                </div>
-              </div>
-            </article>
-            <article class="rated-products-product box-shadow">
-              <img
-                src="./img/rated-4.jpg"
-                class="rated-products-product_img"
-                alt=""
-              />
-              <div class="rated-products-product_info px-lg-3 px-md-2">
-                <div>
-                  <p class="products_name pt-2 color-1 size-medium_s">
-                    Producto 5
-                  </p>
-                  <p class="products_price color-2 size-small_l">$300</p>
-                </div>
-                <div class="rate">
-                  <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">1 star</label>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="container-fluid">
-        <div class="aboutUs py-4 d-flex flex-column">
-          <h2 class="color-1 size-large_s">Acerca de nosotros</h2>
-          <p class="color-2 size-medium_s">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            in esse odio consequuntur ut, sunt excepturi sequi similique
-            voluptate voluptatibus nisi, dicta nam aut eos aperiam expedita
-            illum eius! Quaerat.
-          </p>
         </div>
       </section>
     </main>
@@ -450,7 +281,7 @@
             <a href="index.html" class="logo d-flex align-items-center">
               <h5 class="size-medium_l color-white_1">Vaqueros</h5>
             </a>
-            <p class=" size-small_l text-justify color-white_2">
+            <p class="size-small_l text-justify color-white_2">
               Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
               nada terra videa magna derita valies darta donna mare fermentum
               iaculis eu non diam phasellus.
@@ -535,22 +366,42 @@
           <div class="col-lg-2 col-6 footer-links">
             <h5 class="size-medium_s color-white_1">Menu principal</h5>
             <ul>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Inicio</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Sombreros </a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Extras</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Terms of service</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">PrisaSvacy policy</a></li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Inicio</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Sombreros </a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Extras</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Terms of service</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">PrisaSvacy policy</a>
+              </li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
             <h5 class="size-medium_s color-white_1">Our Services</h5>
             <ul>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Web Design</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Web Development</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Product Management</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Marketing</a></li>
-              <li class="mb-2 size-small_l color-white_2"><a href="#">Graphic Design</a></li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Web Design</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Web Development</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Product Management</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Marketing</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Graphic Design</a>
+              </li>
             </ul>
           </div>
 

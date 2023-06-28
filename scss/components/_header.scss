@@ -1,0 +1,13 @@
+header {
+  background-color: $header-bg-color;
+  font-family: "Poppins","Open-sans";
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  .offcanvas {
+    background-color: #eddbc7;
+    &-title {
+      margin-bottom: 10px black solid;
+    }
+  }
+}

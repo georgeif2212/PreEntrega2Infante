@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+p, span {
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+ol,
+ul {
+  list-style: none;
+  padding: 0%;
+}
+
+
+a {
+  text-decoration: none;
+}
