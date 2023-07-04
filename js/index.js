@@ -24,13 +24,14 @@ let opcion;
 let total = 0;
 const opcionSalir = 8;
 class Sombrero {
-  constructor(id, color, talla, tipo, precio,url) {
+  constructor(id, color, talla, tipo, precio, url,categoria) {
     this.id = id;
     this.color = color;
     this.talla = talla;
     this.tipo = tipo;
     this.precio = precio;
-    this.url=url;
+    this.url = url;
+    this.categoria = categoria;
   }
   describir() {
     console.log(
@@ -228,12 +229,55 @@ const descuento = (precio) => {
 const sombreros = [];
 const servicios = [];
 const productos = [];
-const sombrero1 = new Sombrero(1, "Cafe", 50, "Bristol", 300);
-const sombrero2 = new Sombrero(2, "Negro", 54, "Bombín", 229);
-const sombrero3 = new Sombrero(3, "Azul", 48, "Fedora", 260);
-const sombrero4 = new Sombrero(4, "Rojo", 46, "Porkpie", 200);
-const sombrero5 = new Sombrero(5, "Cafe", 40, "Canotier Veneciano", 249);
-sombreros.push(sombrero1, sombrero2, sombrero3, sombrero4, sombrero5);
+const sombrero1 = new Sombrero(
+  1,
+  "Cafe",
+  50,
+  "Bristol",
+  300,
+  "../img/producto1.jpg"
+);
+const sombrero2 = new Sombrero(
+  2,
+  "Negro",
+  54,
+  "Bombín",
+  229,
+  "../img/producto2.jpg"
+);
+const sombrero3 = new Sombrero(
+  3,
+  "Azul",
+  48,
+  "Fedora",
+  260,
+  "../img/producto3.jpg"
+);
+const sombrero4 = new Sombrero(
+  4,
+  "Rojo",
+  46,
+  "Porkpie",
+  200,
+  "../img/producto4.jpg"
+);
+const sombrero5 = new Sombrero(
+  5,
+  "Cafe",
+  40,
+  "Canotier Veneciano",
+  249,
+  "../img/producto5.jpg"
+);
+const sombrero6 = new Sombrero(
+  5,
+  "Cafe",
+  40,
+  "Canotier Veneciano",
+  249,
+  "../img/producto5.jpg"
+);
+sombreros.push(sombrero1, sombrero2, sombrero3, sombrero4, sombrero5,sombrero6);
 const servicio1 = new Servicio(1, "Limpieza", 129);
 const servicio2 = new Servicio(2, "Premium", 200);
 const servicio3 = new Servicio(3, "Brillo", 130);
@@ -241,11 +285,39 @@ servicios.push(servicio1, servicio2, servicio3);
 productos.push(sombreros, servicios);
 
 // ! PROGRAMA
-let name = prompt("Bienvenido, ingrese su nombre");
-while (name === "") {
-  name = prompt("Por favor, ingresa tu nombre");
-}
-alert("Bienvenido " + name);
+// let name = prompt("Bienvenido, ingrese su nombre");
+// while (name === "") {
+//   name = prompt("Por favor, ingresa tu nombre");
+// }
+// alert("Bienvenido " + name);
 
-menu();
+// menu();
+const idProductos = document.querySelector("#productos");
+console.log(idProductos);
+document.addEventListener("DOMContentLoaded", () => {
+  // Tu código aquí
+  idProductos.innerHTML = "";
+  sombreros.forEach((el) => {
+    const article = document.createElement("article");
+    article.classList.add("box-shadow");
+    article.innerHTML = ` 
+    <a href="">
+    <div class="grid-container-productos_producto">
+      <img
+        class="grid-container-productos_img"
+        src="${el.url}"
+        alt=""
+      />
+      <div>
+        <p class="color-1 size-medium_m pt-2">${el.tipo}</p>
+        <p class="pt-1 color-2 size-medium_s">${el.color}</p>
+        <p class="products_price color-2 size-small_l">${el.precio}</p>
+        <p class="color-offer size-medium_s">Envío gratis</p>
+      </div>
+    </div>
+  </a>
+    `;
 
+    idProductos.appendChild(article);
+  });
+});

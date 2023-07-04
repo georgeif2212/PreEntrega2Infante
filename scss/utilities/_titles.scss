@@ -1,7 +1,7 @@
 $title-font-family: "Raleway", sans-serif;
 $title-font-size: 24px;
 $title-color: black;
-
+$offer: #00a650;
 .color {
   &-1 {
     color: $font-1;
@@ -14,6 +14,9 @@ $title-color: black;
   &-3 {
     color: $font-3;
     font-weight: 300;
+  }
+  &-offer{
+    color: $offer;
   }
   &-white{
     &_1{
