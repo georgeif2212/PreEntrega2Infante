@@ -1,11 +1,8 @@
-import {Sombrero,Servicio} from './classes.js'; 
+// * Funciones
 let opcion;
 let total = 0;
 const opcionSalir = 8;
-
-
-// * Funciones
-function menu() {
+export function menu() {
   console.log("Hola");
   do {
     alert("Abre la consola");
@@ -50,7 +47,7 @@ function menu() {
   } while (opcion != opcionSalir);
 }
 
-function verSombreros() {
+export function verSombreros() {
   for (const i of sombreros) {
     i.describir();
   }
@@ -64,7 +61,7 @@ function verSombreros() {
   }
 }
 
-function comprarSombreros() {
+export function comprarSombreros() {
   alert(
     "Recuerda que todos los sombreros con precio mayor a 250 tienen descuento del 10%"
   );
@@ -81,7 +78,7 @@ function comprarSombreros() {
   console.clear();
 }
 
-function showProducts(array) {
+export function showProducts(array) {
   for (let i = 0; i < array.length; i++) {
     let element = array[i];
     if (Array.isArray(element)) {
@@ -94,7 +91,7 @@ function showProducts(array) {
   }
 }
 
-function verServicios() {
+export function verServicios() {
   for (const i of servicios) {
     i.describir();
   }
@@ -108,7 +105,7 @@ function verServicios() {
   }
 }
 
-function comprarServicios() {
+export function comprarServicios() {
   let id = parseInt(prompt("Ingresa el id del servicio que quieres"));
   const servicio = servicios.find((el) => el.id === id);
   if (servicio === undefined) {
@@ -121,7 +118,7 @@ function comprarServicios() {
   console.clear();
 }
 
-function filtrar() {
+export function filtrar() {
   let answer;
   let precio;
   answer = parseInt(
@@ -142,122 +139,23 @@ function filtrar() {
   }
 }
 
-function filter(precio, array) {
+export function filter(precio, array) {
   const filtrado = array.filter((el) => el.precio <= precio);
   console.clear();
   showProducts(filtrado);
 }
 
-function aplicarIVA(arr) {
+export function aplicarIVA(arr) {
   arr.forEach((el) => {
     el.precio = el.precio + el.precio * 0.16;
   });
 }
 
 // * Funciones flecha
-const sumar = (a, b) => a + b;
-const descuento = (precio) => {
+export const sumar = (a, b) => a + b;
+export const descuento = (precio) => {
   if (precio > 250) {
     precio = precio - precio * 0.1;
   }
   return precio;
 };
-
-// * objetos, productos y arrays
-const sombreros = [];
-const servicios = [];
-const productos = [];
-const sombrero1 = new Sombrero(
-  1,
-  "Cafe",
-  50,
-  "Bristol",
-  250,
-  "../img/producto1.jpg"
-);
-const sombrero2 = new Sombrero(
-  2,
-  "Negro",
-  54,
-  "Bombín",
-  229,
-  "../img/producto2.jpg"
-);
-const sombrero3 = new Sombrero(
-  3,
-  "Azul",
-  48,
-  "Fedora",
-  249,
-  "../img/producto3.jpg"
-);
-const sombrero4 = new Sombrero(
-  4,
-  "Rojo",
-  46,
-  "Porkpie",
-  200,
-  "../img/producto4.jpg"
-);
-const sombrero5 = new Sombrero(
-  5,
-  "Cafe",
-  40,
-  "Canotier Veneciano",
-  249,
-  "../img/producto5.jpg"
-);
-const sombrero6 = new Sombrero(
-  5,
-  "Cafe",
-  40,
-  "Canotier",
-  221,
-  "../img/producto5.jpg"
-);
-sombreros.push(
-  sombrero1,
-  sombrero2,
-  sombrero3,
-  sombrero4,
-  sombrero5,
-  sombrero6
-);
-const servicio1 = new Servicio(1, "Limpieza", 129);
-const servicio2 = new Servicio(2, "Premium", 200);
-const servicio3 = new Servicio(3, "Brillo", 130);
-servicios.push(servicio1, servicio2, servicio3);
-productos.push(sombreros, servicios);
-
-// ! PROGRAMA
-// let name = prompt("Bienvenido, ingrese su nombre");
-// while (name === "") {
-//   name = prompt("Por favor, ingresa tu nombre");
-// }
-// alert("Bienvenido " + name);
-
-// menu();
-const idProductos = document.querySelector("#productos");
-document.addEventListener("DOMContentLoaded", () => {
-  // Tu código aquí
-  idProductos.innerHTML = "";
-  sombreros.forEach((el) => {
-    if (el.precio <= 250) {
-      const article = document.createElement("article");
-      article.classList.add("box-shadow");
-      article.innerHTML = `
-      <a href="">
-        <div class="grid-container-productos_producto">
-          <img class="grid-container-productos_img" src="${el.url}" alt="" />
-          <div>
-            <p class="color-1 size-medium_m pt-2">${el.tipo}</p>
-            <p class="pt-1 color-2 size-medium_s">${el.color}</p>
-            <p class="products_price color-1 size-small_l"><b>$ ${el.precio}</b></p>
-            <p class="color-offer size-medium_s">Envío gratis</p>
-          </div>
-        </div>
-      </a>`;
-      idProductos.appendChild(article);
-    }
-  });
-});
