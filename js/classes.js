@@ -1,12 +1,11 @@
 export class Sombrero {
-  constructor(id, color, talla, tipo, precio, url, categoria) {
+  constructor(id, color, talla, precio, url, categorias) {
     this.id = id;
     this.color = color;
     this.talla = talla;
-    this.tipo = tipo;
     this.precio = precio;
     this.url = url;
-    this.categoria = categoria;
+    this.categorias = categorias;
   }
   describir() {
     console.log(
@@ -23,6 +22,7 @@ export class Sombrero {
     );
   }
 }
+
 export class Servicio {
   constructor(id, nombre, precio) {
     this.id = id;
