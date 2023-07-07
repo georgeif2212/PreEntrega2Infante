@@ -109,7 +109,7 @@
           display: flex;
           flex-flow: column;
           img {
-            height: 40vh;
+            height: 20em;
             width: 100%;
             overflow: hidden;
           }
@@ -135,7 +135,7 @@
         margin-bottom: 1em;
         object-fit: cover;
         object-position: center center;
-        height: 50vh;
+        height: 20em;
         
         &-img {
           height: 60%;
