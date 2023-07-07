@@ -6,7 +6,7 @@ import { Sombrero, Servicio } from "./classes.js";
 const sombrero1 = new Sombrero(1, "Cafe", 50, 250, "../img/producto1.jpg", [
   "Bristol",
   "Niño",
-  "Invierno,",
+  "Invierno",
   "Formal",
 ]);
 const sombrero2 = new Sombrero(2, "Negro", 54, 229, "../img/producto2.jpg", [

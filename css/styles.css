@@ -927,6 +927,10 @@ main {
     width: auto;
   }
 }
+.checkbox-wrapper-24 {
+  display: flex;
+  justify-content: space-around;
+}
 .checkbox-wrapper-24 .checkbox {
   display: table-cell;
   width: 100%;
