@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--------LINK FONTS API---------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Oswald:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <!--------LINK BOOTSTRAP---------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!--------ANIMACIÓN AOS ---------->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--------LINK CSS STYLES---------->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!--------MERTA DESCRIPTION ROBOTS---------->
+    <meta
+      name="description"
+      content="Información de ejercicios, grupos musculares, suplementos y gimnasio 
+      que ayudan a progresar y hacer cambios en la salud y estética"
+    />
+    <!-------- ICONS ---------->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <!-------- SPLIDE JS ---------->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <meta name="robots" content="index,follow" />
+    <title>Vaqueros</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1" href="../index.html"
+              >LOS 3 VAQUEROS</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Navegación botón hamburguesa"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-end"
+              data-bs-scroll="true"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <div class="offcanvas-header">
+                <h1 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  Los 3 vaqueros
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="../index.html"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="./sombreros.html"
+                      >Sombreros</a
+                    >
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Extras
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >¿Cómo elegir el sombrero perfecto?</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Guía de tallas</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Cuidado y mantenimiento de sombreros</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./carrito.html">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-shopping-cart"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path
+                          d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+                        ></path>
+                        <path
+                          d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"
+                        ></path>
+                        <path d="M17 17h-11v-14h-2"></path>
+                        <path d="M6 5l14 1l-1 7h-13"></path></svg
+                      >&nbsp; Carrito
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="container carrito">
+        <h2 class="color-1 size-medium_l mb-2">Carrito de compras</h2>
+        <div class="row">
+          <div class="col-8">
+            <article class="producto-carrito">
+              <img
+                class="producto-carrito__img"
+                src="../img/producto1.jpg"
+                alt=""
+              />
+              <div class="producto-carrito-info">
+                <div>
+                  <h4 class="color-1 size-medium_s mb-2">Producto</h4>
+                  <p class="color-2 size-small_l mb-1">Descripción</p>
+                  <p class="color-2 size-small_l mb-1">Color</p>
+                  <div class="producto-carrito-info-selects">
+                    <div>
+                      <label class="color-2 size-small_l" for="talla"
+                        >Talla:</label
+                      >
+                      <select id="talla" name="talla" class="my-select">
+                        <option value="1">41</option>
+                        <option value="2">42</option>
+                        <option value="3">43</option>
+                        <option value="4">44</option>
+                        <option value="5">45</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                      </select>
+                    </div>
+                    <div>
+                      <label class="color-2 size-small_l" for="cantidad"
+                        >Cantidad:</label
+                      >
+                      <select id="cantidad" name="cantidad" class="my-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="producto-carrito-info-extra">
+                  <p class="color-2 size-medium_s mb-1">
+                    <b>$ Precio</b>
+                  </p>
+                  <button>
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      role="img"
+                      width="24px"
+                      height="24px"
+                      fill="none"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-miterlimit="10"
+                        stroke-width="1.5"
+                        d="M14.25 7.5v12m-4.5-12v12M5.25 6v13.5c0 1.24 1.01 2.25 2.25 2.25h9c1.24 0 2.25-1.01 2.25-2.25V5.25h2.75m-2.75 0H21m-12-3h5.25c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5H3"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="producto-carrito">
+              <img
+                class="producto-carrito__img"
+                src="../img/producto1.jpg"
+                alt=""
+              />
+              <div class="producto-carrito-info">
+                <div>
+                  <h4 class="color-1 size-medium_s mb-2">Producto</h4>
+                  <p class="color-2 size-small_l mb-1">Descripción</p>
+                  <p class="color-2 size-small_l mb-1">Color</p>
+                  <div class="producto-carrito-info-selects">
+                    <div>
+                      <label class="color-2 size-small_l" for="talla"
+                        >Talla:</label
+                      >
+                      <select id="talla" name="talla" class="my-select">
+                        <option value="1">41</option>
+                        <option value="2">42</option>
+                        <option value="3">43</option>
+                        <option value="4">44</option>
+                        <option value="5">45</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                      </select>
+                    </div>
+                    <div>
+                      <label class="color-2 size-small_l" for="cantidad"
+                        >Cantidad:</label
+                      >
+                      <select id="cantidad" name="cantidad" class="my-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="producto-carrito-info-extra">
+                  <p class="color-2 size-medium_s mb-1">
+                    <b>$ Precio</b>
+                  </p>
+                  <button>
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                      role="img"
+                      width="24px"
+                      height="24px"
+                      fill="none"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-miterlimit="10"
+                        stroke-width="1.5"
+                        d="M14.25 7.5v12m-4.5-12v12M5.25 6v13.5c0 1.24 1.01 2.25 2.25 2.25h9c1.24 0 2.25-1.01 2.25-2.25V5.25h2.75m-2.75 0H21m-12-3h5.25c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5H3"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            
+
+          </div>
+          <div class="col-4">
+            <div class="carrito-resumen  py-4">
+              <h3 class="color-2 size-medium_l pb-3">Resumen</h3>
+              <div class="carrito-resumen-calculo">
+                <p class="color-2 size-medium_s mb-2">Subtotal</p>
+                <p class="color-1 size-medium_s mb-2">$ Dinero</p>
+              </div>
+              <div class="carrito-resumen-calculo">
+                <p class="color-2 size-medium_s mb-2">
+                  Gastos de envío estimados
+                </p>
+                <p class="color-1 size-medium_s mb-2">Gratis</p>
+              </div>
+              <div class="carrito-resumen-calculo">
+                <p class="color-2 size-medium_s mb-2">Descuento total</p>
+                <p class="color-1 size-medium_s mb-4">$ Dinero</p>
+              </div>
+              <div class="carrito-resumen-calculo-total">
+                <p class="color-2 size-medium_s mb-0">Total</p>
+                <p class="color-1 size-medium_s mb-0">$ Dinero</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button class="Btn">
+                Pagar
+                <svg class="svgIcon" viewBox="0 0 576 512">
+                  <path
+                    d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row py-4">
+          <div class="col-lg-5 col-md-12 footer-info pb-3">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <h5 class="size-medium_l color-white_1">Vaqueros</h5>
+            </a>
+            <p class="size-small_l text-justify color-white_2">
+              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
+              nada terra videa magna derita valies darta donna mare fermentum
+              iaculis eu non diam phasellus.
+            </p>
+            <div class="social-links d-flex mt-4">
+              <a href="#" class="twitter"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-brand-twitter"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z"
+                  ></path></svg
+              ></a>
+              <a href="#" class="facebook"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-brand-facebook"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                  ></path></svg
+              ></a>
+              <a href="#" class="instagram"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-brand-instagram"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+                  ></path>
+                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                  <path d="M16.5 7.5l0 .01"></path></svg
+              ></a>
+              <a href="#" class="linkedin"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-brand-linkedin"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+                  ></path>
+                  <path d="M8 11l0 5"></path>
+                  <path d="M8 8l0 .01"></path>
+                  <path d="M12 16l0 -5"></path>
+                  <path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h5 class="size-medium_s color-white_1">Menu principal</h5>
+            <ul>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Inicio</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Sombreros </a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Extras</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">Terms of service</a>
+              </li>
+              <li class="mb-2 size-small_l color-white_2">
+                <a href="#">PrisaSvacy policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h5 class="size-medium_s color-white_1">Nuestos servicios</h5>
+            <ul>
+              <li class="mb-2 size-small_l color-white_2"><a href="#">1</a></li>
+              <li class="mb-2 size-small_l color-white_2"><a href="#">2</a></li>
+              <li class="mb-2 size-small_l color-white_2"><a href="#">3</a></li>
+              <li class="mb-2 size-small_l color-white_2"><a href="#">4</a></li>
+              <li class="mb-2 size-small_l color-white_2"><a href="#">5</a></li>
+            </ul>
+          </div>
+
+          <div
+            class="pt-3 col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h5 class="size-medium_m color-white_1">Contactanos</h5>
+            <p class="size-small_l text-justify color-white_2">
+              Toluca <br />
+              Mexico 535022<br />
+              dasda<br /><br />
+              <strong>telefono:</strong> +52 5532541224<br />
+              <strong>correo:</strong> vaqueros@ejemplo.com<br />
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid copyright px-3">
+        <div class="size-medium_s color-white_2 text-center">
+          &copy; Copyright <strong><span>Vaqueros</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits size-small_l color-white_2 text-center">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
+          Diseñado por <a href="">Jorge Infante Fragoso</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Script Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- Script Splidejs -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- Script ICONS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons-react/dist/index.umd.min.js"></script>
+    <!-- Script js -->
+    <script src="../js/classes.js" type="module"></script>
+    <script src="../js/sombreros.js" type="module"></script>
+  </body>
+</html>

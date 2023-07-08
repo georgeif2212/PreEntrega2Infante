@@ -7,6 +7,14 @@
       stroke-linejoin: round;
       stroke-width: 2;
     }
+    &-trash {
+      stroke: black;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1;
+      background-color: $background-color;
+    }
     &-brand {
       &-facebook {
         stroke: white;
@@ -14,20 +22,20 @@
         stroke-linejoin: round;
         stroke-width: 2;
       }
-      &-twitter{
+      &-twitter {
         stroke: white;
         fill: none;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 2;
       }
-      &-instagram{
+      &-instagram {
         stroke: white;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 2;
       }
-      &-linkedin{
+      &-linkedin {
         stroke: white;
         stroke-linecap: round;
         stroke-linejoin: round;

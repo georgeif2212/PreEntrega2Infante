@@ -1,0 +1,14 @@
+.my-select {
+  background-color: $background-color;
+  color: #333;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  width: 5em;
+  option {
+    background-color: $background-color;
+    color: $font-2;
+  }
+}
+

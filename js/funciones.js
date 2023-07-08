@@ -28,9 +28,9 @@ export function filtrarPorCategorias(categorias) {
       article.innerHTML = `
         <img class="producto-img mb-2" src="${el.url}" alt="" />
         <div class="producto-info">
-          <p class="color-1 size-medium_m producto-info_title">${el.categorias[0]}</p>
-          <p class="color-1 size-medium_s producto-info_category">${el.categorias[1]}</p>
-          <p class="color-2 size-small_l">${el.categorias[2]}</p>
+          <h3 class="color-1 size-medium_s producto-info_title pb-1">${el.categorias[0]}</h3>
+          <p class="color-2 size-small_l producto-info_category mb-0 pb-0">${el.categorias[1]}</p>
+          <p class="color-3 size-small_l">${el.categorias[2]}</p>
           <div class="producto-info-button">
             <button type="button" class="button">
               <span class="button__text">Add Item</span>
@@ -41,7 +41,7 @@ export function filtrarPorCategorias(categorias) {
                 </svg>
               </span>
             </button>
-            <p class="producto-info-button_precio color-3"><b>$ ${el.precio}</b></p>
+            <p class="producto-info-button_precio color-2">$ ${el.precio}</p>
           </div>
         </div>
       `;

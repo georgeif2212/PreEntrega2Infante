@@ -6,10 +6,12 @@ h4,
 h5,
 h6 {
   font-family: "Oswald", sans-serif;
+  letter-spacing: 0.07em;
 }
 
 p, span {
   font-family: "Roboto", sans-serif;
+  letter-spacing: 0.03em;
 }
 
 * {
@@ -33,17 +35,18 @@ a {
   text-decoration: none;
 }
 
+svg {
+  stroke: none;
+}
+
 .color-1 {
   color: rgba(0, 0, 0, 0.8);
-  font-weight: 600;
 }
 .color-2 {
   color: rgba(0, 0, 0, 0.7);
-  font-weight: 400;
 }
 .color-3 {
   color: rgba(0, 0, 0, 0.6);
-  font-weight: 300;
 }
 .color-offer {
   color: #00a650;
@@ -235,6 +238,14 @@ main {
   stroke-linejoin: round;
   stroke-width: 2;
 }
+.icon-tabler-trash {
+  stroke: black;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1;
+  background-color: #F5F5F5;
+}
 .icon-tabler-brand-facebook {
   stroke: white;
   stroke-linecap: round;
@@ -259,6 +270,61 @@ main {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
+}
+
+button {
+  border: none;
+  background-color: #F5F5F5;
+}
+
+.Btn {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+
+.svgIcon {
+  width: 16px;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.Btn::before {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  content: "";
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: 0.3s;
+  mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+  transition-duration: 0.3s;
+  transform: translate(100%, -50%);
+  border-radius: 0;
+}
+
+.Btn:active {
+  transform: translate(5px, 5px);
+  transition-duration: 0.3s;
 }
 
 .search-hats_button {
@@ -319,7 +385,9 @@ main {
   background-color: #3aa856;
 }
 
-.button, .button__icon, .button__text {
+.button,
+.button__icon,
+.button__text {
   transition: all 0.3s;
 }
 
@@ -741,6 +809,48 @@ main {
     padding: 0 12rem;
   }
 }
+.carrito {
+  padding: 2em;
+  min-height: 80vh;
+}
+.carrito .producto-carrito {
+  display: flex;
+  object-fit: cover;
+  padding: 2em 0em;
+  gap: 35px;
+  border-bottom: 1px solid #ddd9cc;
+}
+.carrito .producto-carrito__img {
+  width: 30%;
+  height: 40%;
+  overflow: hidden;
+}
+.carrito .producto-carrito-info {
+  display: flex;
+  width: 100%;
+  gap: 8em;
+}
+.carrito .producto-carrito-info-extra {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.carrito .producto-carrito-info-selects {
+  display: flex;
+  gap: 30px;
+}
+.carrito-resumen-calculo {
+  display: flex;
+  justify-content: space-between;
+}
+.carrito-resumen-calculo-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0em;
+  border-top: 1px #ddd9cc solid;
+  border-bottom: 1px #ddd9cc solid;
+}
+
 @media screen and (max-width: 767px) {
   main .hero-categories {
     height: 60vh;
@@ -887,7 +997,7 @@ main {
   }
   main .all-products .producto-info-button {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
   }
   main .all-products .producto-info-button p {
@@ -1030,6 +1140,20 @@ main {
   width: 5px;
   background: #fff;
   transition: width 150ms ease 100ms;
+}
+
+.my-select {
+  background-color: #F5F5F5;
+  color: #333;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  width: 5em;
+}
+.my-select option {
+  background-color: #F5F5F5;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /*# sourceMappingURL=styles.css.map */

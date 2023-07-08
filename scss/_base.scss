@@ -5,9 +5,11 @@ h4,
 h5,
 h6 {
   font-family: "Oswald", sans-serif;
+  letter-spacing: 0.07em;
 }
 p, span {
   font-family: "Roboto", sans-serif;
+  letter-spacing: 0.03em;
 }
 
 * {
@@ -28,4 +30,8 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+svg{
+  stroke: none;
 }
