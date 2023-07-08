@@ -42,7 +42,7 @@ const sombrero6 = new Sombrero(6, "Blanco", 40, 324, "../img/producto6.jpg", [
 const sombrero7 = new Sombrero(7, "Gris", 42, 360, "../img/producto7.jpg", [
   "Floppy",
   "Niño",
-  "Invierno,",
+  "Invierno",
   "Formal",
 ]);
 const sombrero8 = new Sombrero(8, "Negro", 54, 452, "../img/producto8.jpg", [
