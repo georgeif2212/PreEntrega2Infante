@@ -3,8 +3,7 @@ import { sombreros } from "./database.js";
 
 
 
-export function updateCart() {
-  const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+export function updateCart(ArrayCarrito) {
   const carritoIndicador = document.querySelector("#carrito-indicador");
   // Obtén la cantidad de elementos en el carrito
   const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
@@ -80,7 +79,7 @@ export function filtrarPorCategorias(categorias) {
             },
             onClick: function () {}, // Callback after click
           }).showToast();
-          updateCart();
+          updateCart(ArrayCarrito);
         });
       });
       allProducts.appendChild(article);

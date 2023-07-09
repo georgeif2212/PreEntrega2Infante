@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
   botonesEliminar.forEach((boton, index) => {
     boton.addEventListener("click", () => {
       eliminarArticulo(index);
-      updateCart();
+      updateCart(ArrayCarrito);
     });
   });
 
@@ -184,5 +184,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  updateCart();
+  updateCart(ArrayCarrito);
 });

@@ -96,8 +96,9 @@ sombreros.push(
   sombrero12,
   // sombrero13,
 );
-const servicio1 = new Servicio(1, "Limpieza", 129);
-const servicio2 = new Servicio(2, "Premium", 200);
-const servicio3 = new Servicio(3, "Brillo", 130);
-servicios.push(servicio1, servicio2, servicio3);
+const servicio1 = new Servicio(1, "Limpieza", 100,"../img/servicio1.jpg","Limpieza general");
+const servicio2 = new Servicio(2, "Premium", 200,"../img/servicio2.jpg","Servicio completo");
+const servicio3 = new Servicio(3, "Brillo", 130,"../img/servicio3.jpg","Brillo a tu sombrero");
+const servicio4 = new Servicio(4, "Especial", 150,"../img/servicio4.jpg","Limpieza y brillo");
+servicios.push(servicio1, servicio2, servicio3,servicio4);
 productos.push(sombreros, servicios);

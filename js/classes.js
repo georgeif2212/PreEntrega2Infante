@@ -24,10 +24,12 @@ export class Sombrero {
 }
 
 export class Servicio {
-  constructor(id, nombre, precio) {
+  constructor(id, nombre, precio,url,descripcion) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
+    this.url = url;
+    this.descripcion = descripcion;
   }
   describir() {
     console.log(

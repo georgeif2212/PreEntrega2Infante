@@ -1,4 +1,4 @@
-import { sombreros } from "./database.js";
+import { sombreros,servicios } from "./database.js";
 import {
   obtenerCategoriasSeleccionadas,
   filtrarPorCategorias,
@@ -7,26 +7,26 @@ import {
 
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 document.addEventListener("DOMContentLoaded", () => {
-  updateCart();
+  updateCart(ArrayCarrito);
 });
 
-const idProductos = document.querySelector("#productos");
+const idProductos = document.querySelector("#servicios");
 document.addEventListener("DOMContentLoaded", () => {
   // Tu código aquí
-  idProductos.innerHTML = "";
-  sombreros.forEach((el) => {
+  servicios.innerHTML = "";
+  servicios.forEach((el) => {
     if (el.precio <= 250) {
       const article = document.createElement("article");
-      article.classList.add("box-shadow");
+      article.classList.add("box-shadow","px-2","py-2");
       article.innerHTML = `
       <a href="">
         <div class="grid-container-productos_producto">
           <img class="grid-container-productos_img" src="${el.url}" alt="" />
           <div>
-            <p class="color-1 size-medium_m pt-2">${el.categorias[0]}</p>
-            <p class="pt-1 color-2 size-medium_s">${el.color}</p>
-            <p class="products_price color-1 size-small_l"><b>$ ${el.precio}</b></p>
-            <p class="color-offer size-medium_s">Envío gratis</p>
+            <h3 class="color-1 size-medium_s pt-2">${el.nombre}</h3>
+            <p class="color-2 size-small_l">${el.descripcion}</p>
+            <p class="products_price color-2 size-small_l"><b>$ ${el.precio}</b></p>
+            <p class="color-offer size-small_l">Gratis en la compra de 1 sombrero</p>
           </div>
         </div>
       </a>`;
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           onClick: function () {}, // Callback after click
         }).showToast();
-        updateCart();
+        updateCart(ArrayCarrito);
       });
     });
     allProducts.appendChild(article);
