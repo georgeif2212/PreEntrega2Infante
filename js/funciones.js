@@ -1,7 +1,8 @@
 // * Funciones
 import { sombreros } from "./database.js";
 
-const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+
 export function updateCart() {
   const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const carritoIndicador = document.querySelector("#carrito-indicador");
@@ -27,6 +28,7 @@ export function obtenerCategoriasSeleccionadas() {
 
 const allProducts = document.querySelector("#all-products");
 export function filtrarPorCategorias(categorias) {
+  const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
   allProducts.innerHTML = "";
   sombreros.forEach((el) => {
     if (categorias.every((categoria) => el.categorias.includes(categoria))) {
@@ -57,7 +59,6 @@ export function filtrarPorCategorias(categorias) {
         button.addEventListener("click", () => {
           ArrayCarrito.push(el);
           localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-          updateCart();
           Toastify({
             text: "Agregado al carrito de compras",
             duration: 3000,
@@ -68,21 +69,23 @@ export function filtrarPorCategorias(categorias) {
             position: "right", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
             style: {
-              background: "linear-gradient(to right, #00b09b, #96c93d)",
+              background: "rgb(168,232,144)",
+              background:
+                "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
+              color: "white",
             },
             offset: {
               y: 45,
             },
             onClick: function () {}, // Callback after click
           }).showToast();
-          
+          updateCart();
         });
       });
       allProducts.appendChild(article);
     }
   });
 }
-
 
 // * Funciones flecha
 export const sumar = (a, b) => a + b;

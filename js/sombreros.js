@@ -2,11 +2,10 @@ import { sombreros } from "./database.js";
 import {
   obtenerCategoriasSeleccionadas,
   filtrarPorCategorias,
-  updateCart
+  updateCart,
 } from "./funciones.js";
 
-export const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 document.addEventListener("DOMContentLoaded", () => {
   updateCart();
 });
@@ -91,7 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
           position: "right", // `left`, `center` or `right`
           stopOnFocus: true, // Prevents dismissing of toast on hover
           style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "rgb(168,232,144)",
+            background: "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
+            color: "white",
           },
           offset: {
             y: 45,
@@ -112,4 +113,3 @@ checkboxes.forEach((checkbox) => {
     filtrarPorCategorias(categoriasSeleccionadas);
   });
 });
-

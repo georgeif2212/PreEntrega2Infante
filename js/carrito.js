@@ -151,11 +151,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </h4>
     </div>
     `;
+    const ArrayCarrito2 = ArrayCarrito;
     const carritoIndicador = document.querySelector("#carrito-indicador");
     // Obtén la cantidad de elementos en el carrito
-    const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
+    const cantidadCarrito = ArrayCarrito2.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
     // Actualiza el indicador
     carritoIndicador.textContent = cantidadCarrito;
+    Swal.fire("Good job!", "You clicked the button!", "success");
   });
 
   updateCart();
