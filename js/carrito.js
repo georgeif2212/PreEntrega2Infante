@@ -6,15 +6,16 @@ const containerCarrito = document.querySelector("#carrito-productos");
 document.addEventListener("DOMContentLoaded", () => {
   containerCarrito.innerHTML = "";
   ArrayCarrito.forEach((el) => {
+    const {color,precio, url, categorias} = el;
     const article = document.createElement("article");
     article.classList.add("producto-carrito");
     article.innerHTML = `
-      <img class="producto-carrito__img" src="${el.url}" alt=""/>
+      <img class="producto-carrito__img" src="${url}" alt=""/>
       <div class="producto-carrito-info">
         <div>
-          <h4 class="color-1 size-medium_s mb-2">${el.categorias[0]}</h4>
-          <p class="color-2 size-small_l mb-1">Sombrero para ${el.categorias[1]}</p>
-          <p class="color-2 size-small_l mb-1">Color: ${el.color}</p>
+          <h4 class="color-1 size-medium_s mb-2">${categorias[0]}</h4>
+          <p class="color-2 size-small_l mb-1">Sombrero para ${categorias[1]}</p>
+          <p class="color-2 size-small_l mb-1">Color: ${color}</p>
           <div class="producto-carrito-info-selects">
             <div>
               <label class="color-2 size-small_l" for="talla"
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="producto-carrito-info-extra">
         <p class="color-2 size-medium_s mb-1">
-          <b>$ <span id="precio" data-precio-original="${el.precio}">${el.precio}</span></b>
+          <b>$ <span id="precio" data-precio-original="${precio}">${precio}</span></b>
         </p>
         <button>
           <svg

@@ -32,14 +32,15 @@ export function filtrarPorCategorias(categorias) {
   allProducts.innerHTML = "";
   sombreros.forEach((el) => {
     if (categorias.every((categoria) => el.categorias.includes(categoria))) {
+      const {precio, url, categorias} = el;
       const article = document.createElement("article");
       article.classList.add("producto", "box-product");
       article.innerHTML = `
-        <img class="producto-img mb-2" src="${el.url}" alt="" />
+        <img class="producto-img mb-2" src="${url}" alt="" />
         <div class="producto-info">
-          <h3 class="color-1 size-medium_s producto-info_title pb-1">${el.categorias[0]}</h3>
-          <p class="color-2 size-small_l producto-info_category mb-0 pb-0">${el.categorias[1]}</p>
-          <p class="color-3 size-small_l">${el.categorias[2]}</p>
+          <h3 class="color-1 size-medium_s producto-info_title pb-1">${categorias[0]}</h3>
+          <p class="color-2 size-small_l producto-info_category mb-0 pb-0">${categorias[1]}</p>
+          <p class="color-3 size-small_l">${categorias[2]}</p>
           <div class="producto-info-button">
             <button type="button" class="button add-cart">
               <span class="button__text">Agregar</span>
@@ -50,7 +51,7 @@ export function filtrarPorCategorias(categorias) {
                 </svg>
               </span>
             </button>
-            <p class="producto-info-button_precio color-2">$ ${el.precio}</p>
+            <p class="producto-info-button_precio color-2">$ ${precio}</p>
           </div>
         </div>
       `;
