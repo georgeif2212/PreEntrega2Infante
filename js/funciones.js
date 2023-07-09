@@ -1,9 +1,6 @@
 // * Funciones
-import { checkboxes,allProducts } from "./sombreros.js";
+import { checkboxes, allProducts, ArrayCarrito } from "./sombreros.js";
 import { sombreros } from "./database.js";
-let opcion;
-let total = 0;
-const opcionSalir = 8;
 
 export function obtenerCategoriasSeleccionadas() {
   const categorias = [];
@@ -32,7 +29,7 @@ export function filtrarPorCategorias(categorias) {
           <p class="color-2 size-small_l producto-info_category mb-0 pb-0">${el.categorias[1]}</p>
           <p class="color-3 size-small_l">${el.categorias[2]}</p>
           <div class="producto-info-button">
-            <button type="button" class="button">
+            <button type="button" class="button add-cart">
               <span class="button__text">Add Item</span>
               <span class="button__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
@@ -45,6 +42,13 @@ export function filtrarPorCategorias(categorias) {
           </div>
         </div>
       `;
+      const addCartButtons = article.querySelectorAll(".add-cart");
+      addCartButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          ArrayCarrito.push(el);
+          localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+        });
+      });
       allProducts.appendChild(article);
     }
   });

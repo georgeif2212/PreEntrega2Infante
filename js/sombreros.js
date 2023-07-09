@@ -1,5 +1,10 @@
 import { sombreros } from "./database.js";
-import { obtenerCategoriasSeleccionadas,filtrarPorCategorias } from "./funciones.js";
+import {
+  obtenerCategoriasSeleccionadas,
+  filtrarPorCategorias,
+} from "./funciones.js";
+export const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 const idProductos = document.querySelector("#productos");
 document.addEventListener("DOMContentLoaded", () => {
   // Tu código aquí
@@ -41,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
         <p class="color-3 size-small_l">${el.categorias[2]}</p>
         <div class="producto-info-button">
-          <button type="button" class="button">
+          <button type="button" class="button add-cart">
             <span class="button__text">Add Item</span>
             <span class="button__icon"
               ><svg
@@ -64,232 +69,22 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
+    const addCartButtons = article.querySelectorAll(".add-cart");
+    addCartButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        ArrayCarrito.push(el);
+        //localStorage.clear();
+        localStorage.setItem("carrito",JSON.stringify(ArrayCarrito));
+      });
+    });
     allProducts.appendChild(article);
   });
 });
 
-// const checkCaballero = document.querySelector("#check-Caballero");
-// const checkNiño = document.querySelector("#check-Niño");
-// const checkDama = document.querySelector("#check-Dama");
-// const checkInvierno = document.querySelector("#check-Invierno");
-// const checkVerano = document.querySelector("#check-Verano");
-
-// checkCaballero.addEventListener("click", () => {
-//   allProducts.innerHTML = "";
-//   sombreros.forEach((el) => {
-//     if (el.categorias[1] == "Caballero") {
-//       const article = document.createElement("article");
-//       article.classList.add("producto", "box-product");
-//       article.innerHTML = `
-//       <img class="producto-img mb-2" src="${el.url}" alt="" />
-//       <div class="producto-info">
-//         <p class="color-1 size-medium_m producto-info_title">${el.categorias[0]}</p>
-//         <p class="color-1 size-medium_s producto-info_category">
-//         ${el.categorias[1]}
-//         </p>
-//         <div class="producto-info-button">
-//           <button type="button" class="button">
-//             <span class="button__text">Add Item</span>
-//             <span class="button__icon"
-//               ><svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 viewBox="0 0 24 24"
-//                 stroke-width="2"
-//                 stroke-linejoin="round"
-//                 stroke-linecap="round"
-//                 stroke="currentColor"
-//                 height="24"
-//                 fill="none"
-//                 class="svg"
-//               >
-//                 <line y2="19" y1="5" x2="12" x1="12"></line>
-//                 <line y2="12" y1="12" x2="19" x1="5"></line></svg
-//             ></span>
-//           </button>
-//           <p class="producto-info-button_precio color-3"><b>$ ${el.precio}</b></p>
-//         </div>
-//       </div>
-//     `;
-//       allProducts.appendChild(article);
-//     }
-//   });
-// });
-
-// checkNiño.addEventListener("click", () => {
-//   allProducts.innerHTML = "";
-//   sombreros.forEach((el) => {
-//     if (el.categorias[1] == "Niño") {
-//       const article = document.createElement("article");
-//       article.classList.add("producto", "box-product");
-//       article.innerHTML = `
-//       <img class="producto-img mb-2" src="${el.url}" alt="" />
-//       <div class="producto-info">
-//         <p class="color-1 size-medium_m producto-info_title">${el.categorias[0]}</p>
-//         <p class="color-1 size-medium_s producto-info_category">
-//         ${el.categorias[1]}
-//         </p>
-//         <div class="producto-info-button">
-//           <button type="button" class="button">
-//             <span class="button__text">Add Item</span>
-//             <span class="button__icon"
-//               ><svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 viewBox="0 0 24 24"
-//                 stroke-width="2"
-//                 stroke-linejoin="round"
-//                 stroke-linecap="round"
-//                 stroke="currentColor"
-//                 height="24"
-//                 fill="none"
-//                 class="svg"
-//               >
-//                 <line y2="19" y1="5" x2="12" x1="12"></line>
-//                 <line y2="12" y1="12" x2="19" x1="5"></line></svg
-//             ></span>
-//           </button>
-//           <p class="producto-info-button_precio color-3"><b>$ ${el.precio}</b></p>
-//         </div>
-//       </div>
-//     `;
-//       allProducts.appendChild(article);
-//     }
-//   });
-// });
-
-// checkDama.addEventListener("click", () => {
-//   allProducts.innerHTML = "";
-//   sombreros.forEach((el) => {
-//     if (el.categorias[1] == "Dama") {
-//       const article = document.createElement("article");
-//       article.classList.add("producto", "box-product");
-//       article.innerHTML = `
-//       <img class="producto-img mb-2" src="${el.url}" alt="" />
-//       <div class="producto-info">
-//         <p class="color-1 size-medium_m producto-info_title">${el.categorias[0]}</p>
-//         <p class="color-1 size-medium_s producto-info_category">
-//         ${el.categorias[1]}
-//         </p>
-//         <div class="producto-info-button">
-//           <button type="button" class="button">
-//             <span class="button__text">Add Item</span>
-//             <span class="button__icon"
-//               ><svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 viewBox="0 0 24 24"
-//                 stroke-width="2"
-//                 stroke-linejoin="round"
-//                 stroke-linecap="round"
-//                 stroke="currentColor"
-//                 height="24"
-//                 fill="none"
-//                 class="svg"
-//               >
-//                 <line y2="19" y1="5" x2="12" x1="12"></line>
-//                 <line y2="12" y1="12" x2="19" x1="5"></line></svg
-//             ></span>
-//           </button>
-//           <p class="producto-info-button_precio color-3"><b>$ ${el.precio}</b></p>
-//         </div>
-//       </div>
-//     `;
-//       allProducts.appendChild(article);
-//     }
-//   });
-// });
-
-// checkInvierno.addEventListener("click", () => {
-//   allProducts.innerHTML = "";
-//   sombreros.forEach((el) => {
-//     if (el.categorias[2] == "Invierno") {
-//       const article = document.createElement("article");
-//       article.classList.add("producto", "box-product");
-//       article.innerHTML = `
-//       <img class="producto-img mb-2" src="${el.url}" alt="" />
-//       <div class="producto-info">
-//         <p class="color-1 size-medium_m producto-info_title">${el.categorias[0]}</p>
-//         <p class="color-1 size-medium_s producto-info_category">
-//         ${el.categorias[1]}
-//         </p>
-//         <div class="producto-info-button">
-//           <button type="button" class="button">
-//             <span class="button__text">Add Item</span>
-//             <span class="button__icon"
-//               ><svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 viewBox="0 0 24 24"
-//                 stroke-width="2"
-//                 stroke-linejoin="round"
-//                 stroke-linecap="round"
-//                 stroke="currentColor"
-//                 height="24"
-//                 fill="none"
-//                 class="svg"
-//               >
-//                 <line y2="19" y1="5" x2="12" x1="12"></line>
-//                 <line y2="12" y1="12" x2="19" x1="5"></line></svg
-//             ></span>
-//           </button>
-//           <p class="producto-info-button_precio color-3"><b>$ ${el.precio}</b></p>
-//         </div>
-//       </div>
-//     `;
-//       allProducts.appendChild(article);
-//     }
-//   });
-// });
-
-// checkVerano.addEventListener("click", () => {
-//   allProducts.innerHTML = "";
-//   sombreros.forEach((el) => {
-//     if (el.categorias[2] == "Verano") {
-//       const article = document.createElement("article");
-//       article.classList.add("producto", "box-product");
-//       article.innerHTML = `
-//       <img class="producto-img mb-2" src="${el.url}" alt="" />
-//       <div class="producto-info">
-//         <p class="color-1 size-medium_m producto-info_title">${el.categorias[0]}</p>
-//         <p class="color-1 size-medium_s producto-info_category">
-//         ${el.categorias[1]}
-//         </p>
-//         <div class="producto-info-button">
-//           <button type="button" class="button">
-//             <span class="button__text">Add Item</span>
-//             <span class="button__icon"
-//               ><svg
-//                 xmlns="http://www.w3.org/2000/svg"
-//                 width="24"
-//                 viewBox="0 0 24 24"
-//                 stroke-width="2"
-//                 stroke-linejoin="round"
-//                 stroke-linecap="round"
-//                 stroke="currentColor"
-//                 height="24"
-//                 fill="none"
-//                 class="svg"
-//               >
-//                 <line y2="19" y1="5" x2="12" x1="12"></line>
-//                 <line y2="12" y1="12" x2="19" x1="5"></line></svg
-//             ></span>
-//           </button>
-//           <p class="producto-info-button_precio color-3"><b>$ ${el.precio}</b></p>
-//         </div>
-//       </div>
-//     `;
-//       allProducts.appendChild(article);
-//     }
-//   });
-// });
 export const checkboxes = document.querySelectorAll('[name="check-sombrero"]');
-
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     const categoriasSeleccionadas = obtenerCategoriasSeleccionadas();
     filtrarPorCategorias(categoriasSeleccionadas);
   });
 });
-
-
