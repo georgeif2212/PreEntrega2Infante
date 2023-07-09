@@ -116,11 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
     descuentoTotal.textContent = descuento.toFixed(2);
 
     let envio = subtotal > 500 ? "Gratis" : subtotal * 0.4;
+    envio = envio=="Gratis" ? "Gratis" : envio.toFixed(2);
     let total =
       envio == "Gratis" ? subtotal - descuento : subtotal + envio - descuento;
 
     totalElemento.textContent = total.toFixed(2);
-    envio == "Gratis" ? "Gratis" : envio.toFixed(2);
+    
     costoEnvio.textContent = envio;
   };
 

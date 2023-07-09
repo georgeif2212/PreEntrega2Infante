@@ -1,4 +1,4 @@
-import { sombreros,servicios } from "./database.js";
+import { sombreros, servicios } from "./database.js";
 import {
   obtenerCategoriasSeleccionadas,
   filtrarPorCategorias,
@@ -10,28 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCart(ArrayCarrito);
 });
 
-const idProductos = document.querySelector("#servicios");
+const idServicios = document.querySelector("#servicios");
 document.addEventListener("DOMContentLoaded", () => {
   // Tu código aquí
   servicios.innerHTML = "";
   servicios.forEach((el) => {
-    if (el.precio <= 250) {
-      const article = document.createElement("article");
-      article.classList.add("box-shadow","px-2","py-2");
-      article.innerHTML = `
+    const {url,nombre,descripcion,precio}=el;
+    const article = document.createElement("article");
+    article.classList.add("box-shadow");
+    article.innerHTML = `
       <a href="">
         <div class="grid-container-productos_producto">
-          <img class="grid-container-productos_img" src="${el.url}" alt="" />
+          <img class="grid-container-productos_img" src="${url}" alt="" />
           <div>
-            <h3 class="color-1 size-medium_s pt-2">${el.nombre}</h3>
-            <p class="color-2 size-small_l">${el.descripcion}</p>
-            <p class="products_price color-2 size-small_l"><b>$ ${el.precio}</b></p>
+            <h3 class="color-1 size-medium_s pt-2">${nombre}</h3>
+            <p class="color-2 size-small_l">${descripcion}</p>
+            <p class="products_price color-2 size-small_l"><b>$ ${precio}</b></p>
             <p class="color-offer size-small_l">Gratis en la compra de 1 sombrero</p>
           </div>
         </div>
-      </a>`;
-      idProductos.appendChild(article);
-    }
+      </a>
+      `;
+    idServicios.appendChild(article);
   });
 });
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Tu código aquí
   allProducts.innerHTML = "";
   sombreros.forEach((el) => {
-    const {precio, url, categorias} = el;
+    const { precio, url, categorias } = el;
     const article = document.createElement("article");
     article.classList.add("producto", "box-product");
     article.innerHTML = `
@@ -92,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
           stopOnFocus: true, // Prevents dismissing of toast on hover
           style: {
             background: "rgb(168,232,144)",
-            background: "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
+            background:
+              "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
             color: "white",
           },
           offset: {
