@@ -1,7 +1,7 @@
 // * Funciones
-import { checkboxes, allProducts } from "./sombreros.js";
 import { sombreros } from "./database.js";
 
+const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 export function updateCart() {
   const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const carritoIndicador = document.querySelector("#carrito-indicador");
@@ -11,6 +11,7 @@ export function updateCart() {
   carritoIndicador.textContent = cantidadCarrito;
 }
 
+const checkboxes = document.querySelectorAll('[name="check-sombrero"]');
 export function obtenerCategoriasSeleccionadas() {
   const categorias = [];
 
@@ -24,9 +25,9 @@ export function obtenerCategoriasSeleccionadas() {
   return categorias;
 }
 
+const allProducts = document.querySelector("#all-products");
 export function filtrarPorCategorias(categorias) {
   allProducts.innerHTML = "";
-
   sombreros.forEach((el) => {
     if (categorias.every((categoria) => el.categorias.includes(categoria))) {
       const article = document.createElement("article");
@@ -56,6 +57,25 @@ export function filtrarPorCategorias(categorias) {
         button.addEventListener("click", () => {
           ArrayCarrito.push(el);
           localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+          updateCart();
+          Toastify({
+            text: "Agregado al carrito de compras",
+            duration: 3000,
+            destination: "./carrito.html",
+            newWindow: false,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            offset: {
+              y: 45,
+            },
+            onClick: function () {}, // Callback after click
+          }).showToast();
+          
         });
       });
       allProducts.appendChild(article);

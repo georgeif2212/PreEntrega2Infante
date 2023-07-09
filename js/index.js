@@ -1,3 +1,4 @@
+import { updateCart } from "./funciones.js";
 // ! Carrusel html
 document.addEventListener("DOMContentLoaded", function () {
   new Splide(".splide", {
@@ -19,3 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   }).mount();
 });
+
+const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+updateCart();

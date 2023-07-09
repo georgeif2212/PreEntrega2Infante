@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-export const allProducts = document.querySelector("#all-products");
+const allProducts = document.querySelector("#all-products");
 document.addEventListener("DOMContentLoaded", () => {
   // Tu código aquí
   allProducts.innerHTML = "";
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-export const checkboxes = document.querySelectorAll('[name="check-sombrero"]');
+const checkboxes = document.querySelectorAll('[name="check-sombrero"]');
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener("change", () => {
     const categoriasSeleccionadas = obtenerCategoriasSeleccionadas();

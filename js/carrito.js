@@ -1,3 +1,4 @@
+import { updateCart } from "./funciones.js";
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const containerCarrito = document.querySelector("#carrito-productos");
@@ -159,12 +160,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCart();
 });
-
-function updateCart() {
-  const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const carritoIndicador = document.querySelector("#carrito-indicador");
-  // Obtén la cantidad de elementos en el carrito
-  const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
-  // Actualiza el indicador
-  carritoIndicador.textContent = cantidadCarrito;
-}
