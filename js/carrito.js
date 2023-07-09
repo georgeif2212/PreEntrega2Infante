@@ -2,6 +2,7 @@ import { updateCart } from "./funciones.js";
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const containerCarrito = document.querySelector("#carrito-productos");
+
 document.addEventListener("DOMContentLoaded", () => {
   containerCarrito.innerHTML = "";
   ArrayCarrito.forEach((el) => {
@@ -111,13 +112,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     subtotalElemento.textContent = subtotal;
     descuento = subtotal * 0.1;
-    descuentoTotal.textContent = descuento;
+    descuentoTotal.textContent = descuento.toFixed(2);
 
     let envio = subtotal > 500 ? "Gratis" : subtotal * 0.4;
     let total =
       envio == "Gratis" ? subtotal - descuento : subtotal + envio - descuento;
 
-    totalElemento.textContent = total;
+    totalElemento.textContent = total.toFixed(2);
+    envio == "Gratis" ? "Gratis" : envio.toFixed(2);
     costoEnvio.textContent = envio;
   };
 
@@ -142,23 +144,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttonPagar = document.querySelector("#pagar");
   buttonPagar.addEventListener("click", () => {
-    ArrayCarrito.splice(0, ArrayCarrito.length);
-    localStorage.clear();
-    containerCarrito.innerHTML = `
-    <div class="d-flex align-items-center justify-content-center pt-5">
-      <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
-        No tienes productos en el carrito, ve a comprar
-      </h4>
-    </div>
-    `;
-    const ArrayCarrito2 = ArrayCarrito;
-    const carritoIndicador = document.querySelector("#carrito-indicador");
-    // Obtén la cantidad de elementos en el carrito
-    const cantidadCarrito = ArrayCarrito2.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
-    // Actualiza el indicador
-    carritoIndicador.textContent = cantidadCarrito;
-    Swal.fire("Good job!", "You clicked the button!", "success");
-  });
+    Swal.fire({
+      title: "¿Quieres confirmar la compra?",
+      text: "Puedes hacer cambios cuando tú quieras",
+      showCancelButton: true,
+      confirmButtonColor: "#00a650",
+      cancelButtonColor: "#B7B7B7",
+      confirmButtonText: "Aceptar compra",
+      backdrop: `
+        rgba(192, 148, 81, 0.1)
+      `,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          icon: "success",
+          title: "¡Compra exitosa!",
+          text: "Tu compra se ha registrado",
+          confirmButtonColor: "#00a650",
+          confirmButtonText: "OK",
+          backdrop: `
+            rgba(192, 148, 81, 0.1)
+          `,
+        });
+        ArrayCarrito.splice(0, ArrayCarrito.length);
+        localStorage.clear();
+        containerCarrito.innerHTML = `
+          <div class="d-flex align-items-center justify-content-center pt-5">
+            <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
+              No tienes productos en el carrito, ve a comprar
+            </h4>
+          </div>
+          `;
+        const ArrayCarrito2 = ArrayCarrito;
+        const carritoIndicador = document.querySelector("#carrito-indicador");
+        const cantidadCarrito = ArrayCarrito2.length;
 
+        carritoIndicador.textContent = cantidadCarrito;
+      }
+    });
+  });
   updateCart();
 });
