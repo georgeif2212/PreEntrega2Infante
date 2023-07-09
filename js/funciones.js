@@ -1,6 +1,15 @@
 // * Funciones
-import { checkboxes, allProducts, ArrayCarrito } from "./sombreros.js";
+import { checkboxes, allProducts } from "./sombreros.js";
 import { sombreros } from "./database.js";
+
+export function updateCart() {
+  const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const carritoIndicador = document.querySelector("#carrito-indicador");
+  // Obtén la cantidad de elementos en el carrito
+  const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
+  // Actualiza el indicador
+  carritoIndicador.textContent = cantidadCarrito;
+}
 
 export function obtenerCategoriasSeleccionadas() {
   const categorias = [];
@@ -54,13 +63,6 @@ export function filtrarPorCategorias(categorias) {
   });
 }
 
-export function updateCart() {
-  const carritoIndicador = document.querySelector("#carrito-indicador");
-  // Obtén la cantidad de elementos en el carrito
-  const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
-  // Actualiza el indicador
-  carritoIndicador.textContent = cantidadCarrito;
-}
 
 // * Funciones flecha
 export const sumar = (a, b) => a + b;

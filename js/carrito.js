@@ -1,5 +1,3 @@
-import { updateCart } from "./funciones.js";
-
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const containerCarrito = document.querySelector("#carrito-productos");
@@ -126,9 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const botonesEliminar = document.querySelectorAll(
     ".producto-carrito-info-extra button"
   );
+
   botonesEliminar.forEach((boton, index) => {
     boton.addEventListener("click", () => {
       eliminarArticulo(index);
+      updateCart();
     });
   });
 
@@ -138,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
     location.reload();
   };
-  updateCart();
 
   const buttonPagar = document.querySelector("#pagar");
   buttonPagar.addEventListener("click", () => {
@@ -149,11 +148,23 @@ document.addEventListener("DOMContentLoaded", () => {
       <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
         No tienes productos en el carrito, ve a comprar
       </h4>
-    </div>`;
+    </div>
+    `;
     const carritoIndicador = document.querySelector("#carrito-indicador");
     // Obtén la cantidad de elementos en el carrito
     const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
     // Actualiza el indicador
     carritoIndicador.textContent = cantidadCarrito;
   });
+
+  updateCart();
 });
+
+function updateCart() {
+  const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const carritoIndicador = document.querySelector("#carrito-indicador");
+  // Obtén la cantidad de elementos en el carrito
+  const cantidadCarrito = ArrayCarrito.length; // Suponiendo que tienes un array llamado ArrayCarrito con los elementos del carrito
+  // Actualiza el indicador
+  carritoIndicador.textContent = cantidadCarrito;
+}

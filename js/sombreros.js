@@ -7,6 +7,10 @@ import {
 
 export const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+document.addEventListener("DOMContentLoaded", () => {
+  updateCart();
+});
+
 const idProductos = document.querySelector("#productos");
 document.addEventListener("DOMContentLoaded", () => {
   // Tu código aquí
@@ -108,4 +112,4 @@ checkboxes.forEach((checkbox) => {
     filtrarPorCategorias(categoriasSeleccionadas);
   });
 });
-updateCart();
+
