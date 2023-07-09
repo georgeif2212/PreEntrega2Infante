@@ -38,6 +38,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     />
+    <!-------- Toastify ---------->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <meta name="robots" content="index,follow" />
     <title>Vaqueros</title>
   </head>
@@ -122,6 +124,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="./carrito.html"
                       ><svg
+                        id="carrito-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         class="icon icon-tabler icon-tabler-shopping-cart"
                         width="24"
@@ -141,8 +144,9 @@
                         ></path>
                         <path d="M17 17h-11v-14h-2"></path>
                         <path d="M6 5l14 1l-1 7h-13"></path></svg
-                      >&nbsp; Carrito</a
-                    >
+                      >&nbsp; Carrito
+                      <div id="carrito-indicador" class="carrito-indicador">0</div>
+                      </a>
                   </li>
                 </ul>
               </div>
@@ -304,8 +308,7 @@
           </label>
         </div>
 
-        <div id="all-products" class="all-products container">
-        </div>
+        <div id="all-products" class="all-products container"></div>
       </section>
 
       <section class="grid-container">
@@ -475,6 +478,11 @@
     </footer>
     <!-- End Footer -->
 
+    <!-- Script Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <!-- Script Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -496,7 +504,6 @@
     <!-- Script ICONS -->
     <script src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons-react/dist/index.umd.min.js"></script>
     <!-- Script js -->
-    <script src="../js/classes.js" type="module"></script>
     <script src="../js/sombreros.js" type="module"></script>
   </body>
 </html>

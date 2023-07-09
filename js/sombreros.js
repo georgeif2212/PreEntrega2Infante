@@ -2,7 +2,9 @@ import { sombreros } from "./database.js";
 import {
   obtenerCategoriasSeleccionadas,
   filtrarPorCategorias,
+  updateCart
 } from "./funciones.js";
+
 export const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const idProductos = document.querySelector("#productos");
@@ -74,8 +76,25 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener("click", () => {
         ArrayCarrito.push(el);
         //localStorage.clear();
-        localStorage.setItem("carrito",JSON.stringify(ArrayCarrito));
-        
+        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+        Toastify({
+          text: "Agregado al carrito de compras",
+          duration: 3000,
+          destination: "./carrito.html",
+          newWindow: false,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          offset: {
+            y: 45,
+          },
+          onClick: function () {}, // Callback after click
+        }).showToast();
+        updateCart();
       });
     });
     allProducts.appendChild(article);
@@ -89,3 +108,4 @@ checkboxes.forEach((checkbox) => {
     filtrarPorCategorias(categoriasSeleccionadas);
   });
 });
+updateCart();
