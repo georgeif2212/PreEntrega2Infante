@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="color-3 size-small_l">${el.categorias[2]}</p>
         <div class="producto-info-button">
           <button type="button" class="button add-cart">
-            <span class="button__text">Add Item</span>
+            <span class="button__text">Agregar</span>
             <span class="button__icon"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ArrayCarrito.push(el);
         //localStorage.clear();
         localStorage.setItem("carrito",JSON.stringify(ArrayCarrito));
+        
       });
     });
     allProducts.appendChild(article);

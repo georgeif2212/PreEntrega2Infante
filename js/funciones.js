@@ -30,7 +30,7 @@ export function filtrarPorCategorias(categorias) {
           <p class="color-3 size-small_l">${el.categorias[2]}</p>
           <div class="producto-info-button">
             <button type="button" class="button add-cart">
-              <span class="button__text">Add Item</span>
+              <span class="button__text">Agregar</span>
               <span class="button__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg">
                   <line y2="19" y1="5" x2="12" x1="12"></line>
@@ -53,6 +53,8 @@ export function filtrarPorCategorias(categorias) {
     }
   });
 }
+
+
 
 // * Funciones flecha
 export const sumar = (a, b) => a + b;

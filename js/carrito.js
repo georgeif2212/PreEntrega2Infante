@@ -1,4 +1,5 @@
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 const containerCarrito = document.querySelector("#carrito-productos");
 document.addEventListener("DOMContentLoaded", () => {
   containerCarrito.innerHTML = "";
@@ -6,11 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const article = document.createElement("article");
     article.classList.add("producto-carrito");
     article.innerHTML = `
-      <img
-      class="producto-carrito__img"
-      src="${el.url}"
-      alt=""
-      />
+      <img class="producto-carrito__img" src="${el.url}" alt=""/>
       <div class="producto-carrito-info">
         <div>
           <h4 class="color-1 size-medium_s mb-2">${el.categorias[0]}</h4>
@@ -50,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="producto-carrito-info-extra">
         <p class="color-2 size-medium_s mb-1">
-          <b>$ <span id="precio">${el.precio}</span></b>
+          <b>$ <span id="precio" data-precio-original="${el.precio}">${el.precio}</span></b>
         </p>
         <button>
           <svg
@@ -71,29 +68,85 @@ document.addEventListener("DOMContentLoaded", () => {
           </svg>
         </button>
       </div>
-    </div>`;
+    </div>
+    `;
     containerCarrito.appendChild(article);
   });
+
+  // Obtener los elementos de cantidad, precio y subtotal
+  const selectCantidad = document.querySelectorAll("#cantidad");
+  const preciosElementos = document.querySelectorAll("#precio");
+  const subtotalElemento = document.querySelector("#subtotal");
+  const totalElemento = document.querySelector("#total");
+  const descuentoTotal = document.querySelector("#descuento");
+  const costoEnvio = document.querySelector("#envio");
+  let descuento;
+
+  // Agregar el event listener a todos los elementos de cantidad
+  selectCantidad.forEach((cantidadElemento, index) => {
+    const precioElemento = preciosElementos[index];
+    cantidadElemento.addEventListener("change", () => {
+      actualizarPrecio(cantidadElemento, precioElemento, subtotalElemento);
+    });
+  });
+
+  // Función para actualizar el precio y subtotal
+  const actualizarPrecio = (
+    cantidadElemento,
+    precioElemento,
+    subtotalElemento
+  ) => {
+    const cantidadSeleccionada = parseInt(cantidadElemento.value);
+    const precioOriginal = parseInt(precioElemento.dataset.precioOriginal);
+    const nuevoPrecio = precioOriginal * cantidadSeleccionada;
+    precioElemento.textContent = nuevoPrecio;
+
+    // Actualizar subtotal
+    let subtotal = 0;
+    const preciosElementos = document.querySelectorAll("#precio");
+    preciosElementos.forEach((elemento) => {
+      subtotal += parseInt(elemento.textContent);
+    });
+
+    subtotalElemento.textContent = subtotal;
+    descuento = subtotal * 0.1;
+    descuentoTotal.textContent = descuento;
+
+    let envio = subtotal > 500 ? "Gratis" : subtotal * 0.4;
+    let total =
+      envio == "Gratis" ? subtotal - descuento : subtotal + envio - descuento;
+
+    totalElemento.textContent = total;
+    costoEnvio.textContent = envio;
+  };
+
+  // Obtener los elementos de los botones de eliminar
+  const botonesEliminar = document.querySelectorAll(
+    ".producto-carrito-info-extra button"
+  );
+  botonesEliminar.forEach((boton, index) => {
+    boton.addEventListener("click", () => {
+      eliminarArticulo(index);
+    });
+  });
+
+  // Función para eliminar un artículo del carrito
+  const eliminarArticulo = (index) => {
+    ArrayCarrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+    location.reload();
+  };
 });
 
-const selectCantidad = document.querySelector("#cantidad");
-const precioElemento = document.querySelector("#precio");
-const subtotal = document.querySelector("#subtotal");
-// Obtener el precio inicial
-console.log(precioElemento);
-
-// // Función para actualizar el precio según la cantidad seleccionada
-// const actualizarPrecio = () => {
-//   const cantidadSeleccionada = selectCantidad.value;
-//   const nuevoPrecio = precio * cantidadSeleccionada;
-//   precioElemento.textContent = nuevoPrecio;
-// };
-// const actualizarSubtotal = () => {
-//   const preciosElementos = document.querySelectorAll("#precio");
-//   console.log(preciosElementos);
-// };
-
-// // Agregar el event listener al cambio de selección
-// selectCantidad.addEventListener("change", actualizarPrecio);
-
-// subtotal.addEventListener("change", actualizarSubtotal);
+const buttonPagar = document.querySelector("#pagar");
+buttonPagar.addEventListener("click", () => {
+  ArrayCarrito.splice(0, ArrayCarrito.length);
+  localStorage.clear();
+  
+  containerCarrito.innerHTML = `
+    <div class="d-flex align-items-center justify-content-center pt-5">
+      <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
+        No tienes productos en el carrito, ve a comprar
+      </h4>
+    </div>`;
+});
