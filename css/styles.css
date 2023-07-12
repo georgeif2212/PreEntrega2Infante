@@ -576,13 +576,15 @@ button {
   main .featured-products {
     padding-top: 2em;
     padding-bottom: 2em;
-    border-top: 1px solid #ddd9cc;
+    border-top: 10px solid #ddd9cc;
   }
   main .featured-products .splide__slide {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.5em;
+    object-fit: cover;
+    border: 10px solid black;
   }
   main .featured-products .splide__slide:last-child {
     margin-right: 0; /* Eliminar el espacio después de la última imagen */
