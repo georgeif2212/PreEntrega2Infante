@@ -22,4 +22,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-updateCart();
+updateCart(ArrayCarrito);
