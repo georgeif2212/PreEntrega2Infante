@@ -546,200 +546,6 @@ button {
     color: #c59b08;
   }
 }
-@media screen and (max-width: 767px) {
-  main {
-    color: black;
-  }
-  main .hero {
-    width: 100%;
-    height: 100vh;
-    background: url("../../svg/stacked-waves-haikei.svg") center center;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  main .hero-intro {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  main .hero-intro_title {
-    font-family: "Raleway", "Open-sans";
-  }
-  main .hero-intro_subtitle {
-    font-family: "Raleway", "Open-sans";
-  }
-  main .featured-products {
-    padding-top: 30em;
-    padding-bottom: 2em;
-    border-top: 10px solid #ddd9cc;
-  }
-  main .featured-products .splide__slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5em;
-    object-fit: cover;
-    border: 10px solid black;
-  }
-  main .featured-products .splide__slide:last-child {
-    margin-right: 0; /* Eliminar el espacio después de la última imagen */
-  }
-  main .featured-products .splide__slide img {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  main .newsletter {
-    padding: 1rem 0;
-    border-top: 1px solid #ddd9cc;
-    border-bottom: 1px solid #ddd9cc;
-    display: flex;
-    flex-flow: column;
-  }
-  main .newsletter .input-group {
-    display: flex;
-    align-items: center;
-  }
-  main .rated-products {
-    border-bottom: 1px solid #ddd9cc;
-  }
-  main .rated-products-product {
-    overflow: hidden;
-  }
-  main .rated-products-product_img {
-    width: 100%;
-    height: auto;
-    border-top: 10px;
-  }
-  main .rated-products-product_info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 1rem;
-  }
-  main .rated-products-product .best {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  main .aboutUs {
-    border-top: 1px solid #ddd9cc;
-    border-bottom: 1px solid #ddd9cc;
-  }
-  main .aboutUs h2 {
-    display: flex;
-    justify-content: center;
-  }
-  main .aboutUs p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 0 0.5rem;
-  }
-}
-@media screen and (min-width: 767px) and (max-width: 1023px) {
-  main {
-    color: black;
-  }
-  main .hero {
-    width: 100%;
-    height: 100vh;
-    background: url("../../svg/stacked-waves-haikei.svg") center center;
-    background-size: cover;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  main .hero-intro {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  main .hero-intro_title {
-    font-family: "Raleway", "Open-sans";
-  }
-  main .hero-intro_subtitle {
-    font-family: "Raleway", "Open-sans";
-  }
-  main .featured-products {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    border-top: 1px solid #ddd9cc;
-  }
-  main .featured-products .splide__slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5em;
-  }
-  main .featured-products .splide__slide:last-child {
-    margin-right: 0; /* Eliminar el espacio después de la última imagen */
-  }
-  main .featured-products .splide__slide img {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  main .newsletter {
-    padding: 1rem 0;
-    border-top: 1px solid #ddd9cc;
-    border-bottom: 1px solid #ddd9cc;
-    display: flex;
-    flex-flow: column;
-  }
-  main .newsletter .input-group {
-    display: flex;
-    align-items: center;
-  }
-  main .rated-products {
-    border-bottom: 1px solid #ddd9cc;
-  }
-  main .rated-products-product {
-    overflow: hidden;
-  }
-  main .rated-products-product_img {
-    width: 100%;
-    height: auto;
-    border-top: 10px;
-  }
-  main .rated-products-product_info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  main .rated-products-product_info .rate {
-    align-self: flex-end;
-  }
-  main .rated-products-product .best {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-  }
-  main .aboutUs {
-    border-top: 1px solid #ddd9cc;
-    border-bottom: 1px solid #ddd9cc;
-  }
-  main .aboutUs h2 {
-    display: flex;
-    justify-content: center;
-  }
-  main .aboutUs p {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 0 5rem;
-  }
-}
 @media screen and (min-width: 1023px) {
   main {
     color: black;
@@ -781,12 +587,18 @@ button {
   main .featured-products .splide__slide:last-child {
     margin-right: 0; /* Eliminar el espacio después de la última imagen */
   }
-  main .featured-products .splide__slide article {
+  main .featured-products .splide__slide .featured-products-product {
     object-fit: cover;
   }
-  main .featured-products .splide__slide article img {
+  main .featured-products .splide__slide .featured-products-product img {
     width: 100%;
     height: 100%;
+  }
+  main .featured-products .splide__slide .featured-products-product__buy {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
   }
   main .newsletter {
     padding: 1rem 0;

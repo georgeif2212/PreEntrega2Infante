@@ -38,6 +38,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     />
+    <!-------- Toastify ---------->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
 
     <meta name="robots" content="index,follow" />
     <title>Vaqueros</title>
@@ -82,7 +88,10 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html"
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="../index.html"
                       >Inicio</a
                     >
                   </li>
@@ -118,7 +127,9 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+                    <a class="nav-link" href="./pages/contacto.html"
+                      >Contacto</a
+                    >
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./pages/carrito.html"
@@ -173,80 +184,7 @@
         <div class="container">
           <h2 class="subtitle color-1 size-large_s">Featured products</h2>
           <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured1.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 1</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured2.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 2</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured3.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 3</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured4.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 4</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured1.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 5</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured7.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 6</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured7.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 7</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-              <li class="splide__slide">
-                <article class="box-shadow">
-                  <img src="./img/featured8.jpg" alt="Imagen 1" />
-                  <p class="products_name color-1 size-medium_s">Producto 8</p>
-                  <p class="products_description color-2 size-small_l">
-                    Lorem ipsum dolor sit amet.
-                  </p>
-                </article>
-              </li>
-            </ul>
+            <ul id="featured-products" class="splide__list"></ul>
           </div>
         </div>
       </section>
@@ -594,6 +532,11 @@
     </footer>
     <!-- End Footer -->
 
+    <!-- Script Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <!-- Script Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

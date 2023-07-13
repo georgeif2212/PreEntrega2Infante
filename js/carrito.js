@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let envio = subtotal > 500 ? "Gratis" : subtotal * 0.4;
     envio = envio=="Gratis" ? "Gratis" : envio.toFixed(2);
-    let total =
-      envio == "Gratis" ? subtotal - descuento : subtotal + envio - descuento;
+    
+    let total = envio == "Gratis" ? subtotal - descuento : subtotal + parseInt(envio) - descuento;
 
     totalElemento.textContent = total.toFixed(2);
     
