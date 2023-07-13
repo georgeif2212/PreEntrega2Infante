@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCart(ArrayCarrito);
 });
 
+// ! Servicios
 const idServicios = document.querySelector("#servicios");
 document.addEventListener("DOMContentLoaded", () => {
-  // Tu código aquí
   servicios.innerHTML = "";
   servicios.forEach((el) => {
-    const {url,nombre,descripcion,precio}=el;
+    const { url, nombre, descripcion, precio } = el;
     const article = document.createElement("article");
     article.classList.add("box-shadow");
     article.innerHTML = `
@@ -35,15 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ! Sombreros
 const allProducts = document.querySelector("#all-products");
 document.addEventListener("DOMContentLoaded", () => {
-  // Tu código aquí
   allProducts.innerHTML = "";
   sombreros.forEach((el) => {
-    const { precio, url, categorias } = el;
-    const article = document.createElement("article");
-    article.classList.add("producto", "box-product");
-    article.innerHTML = `
+    if (el.seccion == "All") {
+      const { precio, url, categorias } = el;
+      const article = document.createElement("article");
+      article.classList.add("producto", "box-product");
+      article.innerHTML = `
       <img class="producto-img mb-2" src="${url}" alt="" />
       <div class="producto-info">
         <h3 class="color-1 size-medium_s producto-info_title pb-1">${categorias[0]}</h3>
@@ -75,36 +76,37 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-    const addCartButtons = article.querySelectorAll(".add-cart");
-    addCartButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        ArrayCarrito.push(el);
-        //localStorage.clear();
-        localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-        Toastify({
-          text: "Agregado al carrito de compras",
-          duration: 3000,
-          destination: "./carrito.html",
-          newWindow: false,
-          close: true,
-          gravity: "top", // `top` or `bottom`
-          position: "right", // `left`, `center` or `right`
-          stopOnFocus: true, // Prevents dismissing of toast on hover
-          style: {
-            background: "rgb(168,232,144)",
-            background:
-              "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
-            color: "white",
-          },
-          offset: {
-            y: 45,
-          },
-          onClick: function () {}, // Callback after click
-        }).showToast();
-        updateCart(ArrayCarrito);
+      const addCartButtons = article.querySelectorAll(".add-cart");
+      addCartButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          ArrayCarrito.push(el);
+          //localStorage.clear();
+          localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+          Toastify({
+            text: "Agregado al carrito de compras",
+            duration: 3000,
+            destination: "./carrito.html",
+            newWindow: false,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "rgb(168,232,144)",
+              background:
+                "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
+              color: "white",
+            },
+            offset: {
+              y: 45,
+            },
+            onClick: function () {}, // Callback after click
+          }).showToast();
+          updateCart(ArrayCarrito);
+        });
       });
-    });
-    allProducts.appendChild(article);
+      allProducts.appendChild(article);
+    }
   });
 });
 

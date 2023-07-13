@@ -170,6 +170,7 @@ const sombrerosData = [
     precio: 400,
     imagen: "../img/rated-2.jpg",
     categorias: ["Trillby", "Dama", "Verano", "Clásico"],
+    section: "Rated"
   },
   {
     color: "Rojo",
@@ -177,6 +178,7 @@ const sombrerosData = [
     precio: 420,
     imagen: "../img/rated-3.jpg",
     categorias: ["Chistera", "Niño", "Verano", "Clásico"],
+    section: "Rated"
   },
   {
     color: "Cafe",
@@ -184,6 +186,7 @@ const sombrerosData = [
     precio: 369,
     imagen: "../img/rated-4.jpg",
     categorias: ["Turbante", "Caballero", "Invierno", "Casual"],
+    section: "Rated"
   },
   {
     color: "Cafe",
@@ -191,6 +194,7 @@ const sombrerosData = [
     precio: 400,
     imagen: "../img/rated-5.jpg",
     categorias: ["Cloche", "Dama", "Invierno", "Formal"],
+    section: "Rated"
   },
 ];
 
