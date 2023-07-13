@@ -3,102 +3,239 @@ export const sombreros = [];
 export const servicios = [];
 export const productos = [];
 import { Sombrero, Servicio } from "./classes.js";
-const sombrero1 = new Sombrero(1, "Cafe", 50, 250, "../img/producto1.jpg", [
-  "Bristol",
-  "Niño",
-  "Invierno",
-  "Formal",
-]);
-const sombrero2 = new Sombrero(2, "Negro", 54, 229, "../img/producto2.jpg", [
-  "Bombín",
-  "Caballero",
-  "Verano",
-  "Casual",
-]);
-const sombrero3 = new Sombrero(3, "Azul", 48, 249, "../img/producto3.jpg", [
-  "Fedora",
-  "Dama",
-  "Verano",
-  "Clásico",
-]);
-const sombrero4 = new Sombrero(4, "Verde", 46, 200, "../img/producto4.jpg", [
-  "Porkpie",
-  "Niño",
-  "Verano",
-  "Clásico",
-]);
-const sombrero5 = new Sombrero(5, "Beige", 40, 300, "../img/producto5.jpg", [
-  "Canotier",
-  "Caballero",
-  "Invierno",
-  "Casual",
-]);
-const sombrero6 = new Sombrero(6, "Blanco", 40, 324, "../img/producto6.jpg", [
-  "Gorra",
-  "Dama",
-  "Invierno",
-  "Formal",
-]);
-const sombrero7 = new Sombrero(7, "Gris", 42, 360, "../img/producto7.jpg", [
-  "Floppy",
-  "Niño",
-  "Invierno",
-  "Formal",
-]);
-const sombrero8 = new Sombrero(8, "Negro", 54, 452, "../img/producto8.jpg", [
-  "Panamá",
-  "Caballero",
-  "Verano",
-  "Casual",
-]);
-const sombrero9 = new Sombrero(9, "Amarillo", 48, 400, "../img/producto9.jpg", [
-  "Trillby",
-  "Dama",
-  "Verano",
-  "Clásico",
-]);
-const sombrero10 = new Sombrero(10, "Rojo", 46, 420, "../img/producto10.jpg", [
-  "Chistera",
-  "Niño",
-  "Verano",
-  "Clásico",
-]);
-const sombrero11 = new Sombrero(11, "Cafe", 40, 369, "../img/producto11.png", [
-  "Turbante",
-  "Caballero",
-  "Invierno",
-  "Casual",
-]);
-const sombrero12 = new Sombrero(12, "Cafe", 40, 400, "../img/producto12.jpg", [
-  "Cloche",
-  "Dama",
-  "Invierno",
-  "Formal",
-]);
-const sombrero13 = new Sombrero(12, "Cafe", 40, 221, "../img/producto12.jpg", [
-  "Pamela",
-  "Dama",
-  "Invierno",
-  "Formal",
-]);
-sombreros.push(
-  sombrero1,
-  sombrero2,
-  sombrero3,
-  sombrero4,
-  sombrero5,
-  sombrero6,
-  sombrero7,
-  sombrero8,
-  sombrero9,
-  sombrero10,
-  sombrero11,
-  sombrero12,
-  // sombrero13,
+const sombrerosData = [
+  {
+    color: "Cafe",
+    talla: 50,
+    precio: 250,
+    imagen: "../img/producto1.jpg",
+    categorias: ["Bristol", "Niño", "Invierno", "Formal"],
+    section: "All"
+  },
+  {
+    color: "Negro",
+    talla: 54,
+    precio: 229,
+    imagen: "../img/producto2.jpg",
+    categorias: ["Bombín", "Caballero", "Verano", "Casual"],
+    section: "All"
+  },
+  {
+    color: "Azul",
+    talla: 48,
+    precio: 249,
+    imagen: "../img/producto3.jpg",
+    categorias: ["Fedora", "Dama", "Verano", "Clásico"],
+    section: "All"
+  },
+  {
+    color: "Verde",
+    talla: 46,
+    precio: 200,
+    imagen: "../img/producto4.jpg",
+    categorias: ["Porkpie", "Niño", "Verano", "Clásico"],
+    section: "All"
+  },
+  {
+    color: "Beige",
+    talla: 40,
+    precio: 300,
+    imagen: "../img/producto5.jpg",
+    categorias: ["Canotier", "Caballero", "Invierno", "Casual"],
+    section: "All"
+  },
+  {
+    color: "Blanco",
+    talla: 40,
+    precio: 324,
+    imagen: "../img/producto6.jpg",
+    categorias: ["Gorra", "Dama", "Invierno", "Formal"],
+    section: "All"
+  },
+  {
+    color: "Gris",
+    talla: 42,
+    precio: 360,
+    imagen: "../img/producto7.jpg",
+    categorias: ["Floppy", "Niño", "Invierno", "Formal"],
+    section: "All"
+  },
+  {
+    color: "Negro",
+    talla: 54,
+    precio: 452,
+    imagen: "../img/producto8.jpg",
+    categorias: ["Panamá", "Caballero", "Verano", "Casual"],
+    section: "All"
+  },
+  {
+    color: "Amarillo",
+    talla: 48,
+    precio: 400,
+    imagen: "../img/producto9.jpg",
+    categorias: ["Trillby", "Dama", "Verano", "Clásico"],
+    section: "All"
+  },
+  {
+    color: "Rojo",
+    talla: 46,
+    precio: 420,
+    imagen: "../img/producto10.jpg",
+    categorias: ["Chistera", "Niño", "Verano", "Clásico"],
+    section: "All"
+  },
+  {
+    color: "Cafe",
+    talla: 40,
+    precio: 369,
+    imagen: "../img/producto11.png",
+    categorias: ["Turbante", "Caballero", "Invierno", "Casual"],
+    section: "All"
+  },
+  {
+    color: "Cafe",
+    talla: 40,
+    precio: 400,
+    imagen: "../img/producto12.jpg",
+    categorias: ["Cloche", "Dama", "Invierno", "Formal"],
+    section: "All"
+  },
+  {
+    color: "Cafe",
+    talla: 50,
+    precio: 250,
+    imagen: "../img/featured1.jpg",
+    categorias: ["Bristol", "Niño", "Invierno", "Formal"],
+    section: "Featured"
+  },
+  {
+    color: "Negro",
+    talla: 54,
+    precio: 229,
+    imagen: "../img/featured2.jpg",
+    categorias: ["Bombín", "Caballero", "Verano", "Casual"],
+    section: "Featured"
+  },
+  {
+    color: "Azul",
+    talla: 48,
+    precio: 249,
+    imagen: "../img/featured3.jpg",
+    categorias: ["Fedora", "Dama", "Verano", "Clásico"],
+    section: "Featured"
+  },
+  {
+    color: "Verde",
+    talla: 46,
+    precio: 200,
+    imagen: "../img/featured4.jpg",
+    categorias: ["Porkpie", "Niño", "Verano", "Clásico"],
+    section: "Featured"
+  },
+  {
+    color: "Beige",
+    talla: 40,
+    precio: 300,
+    imagen: "../img/featured5.jpg",
+    categorias: ["Canotier", "Caballero", "Invierno", "Casual"],
+    section: "Featured"
+  },
+  {
+    color: "Blanco",
+    talla: 40,
+    precio: 324,
+    imagen: "../img/featured6.jpg",
+    categorias: ["Gorra", "Dama", "Invierno", "Formal"],
+    section: "Featured"
+  },
+  {
+    color: "Gris",
+    talla: 42,
+    precio: 360,
+    imagen: "../img/featured7.jpg",
+    categorias: ["Floppy", "Niño", "Invierno", "Formal"],
+    section: "Featured"
+  },
+  {
+    color: "Negro",
+    talla: 54,
+    precio: 452,
+    imagen: "../img/featured8.jpg",
+    categorias: ["Panamá", "Caballero", "Verano", "Casual"],
+    section: "Featured"
+  },
+  {
+    color: "Amarillo",
+    talla: 48,
+    precio: 400,
+    imagen: "../img/rated-2.jpg",
+    categorias: ["Trillby", "Dama", "Verano", "Clásico"],
+  },
+  {
+    color: "Rojo",
+    talla: 46,
+    precio: 420,
+    imagen: "../img/rated-3.jpg",
+    categorias: ["Chistera", "Niño", "Verano", "Clásico"],
+  },
+  {
+    color: "Cafe",
+    talla: 40,
+    precio: 369,
+    imagen: "../img/rated-4.jpg",
+    categorias: ["Turbante", "Caballero", "Invierno", "Casual"],
+  },
+  {
+    color: "Cafe",
+    talla: 40,
+    precio: 400,
+    imagen: "../img/rated-5.jpg",
+    categorias: ["Cloche", "Dama", "Invierno", "Formal"],
+  },
+];
+
+
+for (let i = 0; i < sombrerosData.length; i++) {
+  const data = sombrerosData[i];
+  const sombrero = new Sombrero(
+    i + 1,
+    data.color,
+    data.talla,
+    data.precio,
+    data.imagen,
+    data.categorias,
+    data.section
+  );
+  sombreros.push(sombrero);
+}
+
+const servicio1 = new Servicio(
+  1,
+  "Limpieza",
+  100,
+  "../img/servicio1.jpg",
+  "Limpieza general"
 );
-const servicio1 = new Servicio(1, "Limpieza", 100,"../img/servicio1.jpg","Limpieza general");
-const servicio2 = new Servicio(2, "Premium", 200,"../img/servicio2.jpg","Servicio completo");
-const servicio3 = new Servicio(3, "Brillo", 130,"../img/servicio3.jpg","Brillo a tu sombrero");
-const servicio4 = new Servicio(4, "Especial", 150,"../img/servicio4.jpg","Limpieza y brillo");
-servicios.push(servicio1, servicio2, servicio3,servicio4);
+const servicio2 = new Servicio(
+  2,
+  "Premium",
+  200,
+  "../img/servicio2.jpg",
+  "Servicio completo"
+);
+const servicio3 = new Servicio(
+  3,
+  "Brillo",
+  130,
+  "../img/servicio3.jpg",
+  "Brillo a tu sombrero"
+);
+const servicio4 = new Servicio(
+  4,
+  "Especial",
+  150,
+  "../img/servicio4.jpg",
+  "Limpieza y brillo"
+);
+servicios.push(servicio1, servicio2, servicio3, servicio4);
 productos.push(sombreros, servicios);
