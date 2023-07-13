@@ -270,8 +270,9 @@
           border-top: 10px;
         }
         &-info {
+          padding: 0em 1em;
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           padding-bottom: 1em;
           &__buy{
             display: flex;
