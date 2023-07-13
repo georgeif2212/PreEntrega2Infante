@@ -1,5 +1,6 @@
 import { updateCart } from "./funciones.js";
 import { sombreros } from "./database.js";
+
 // ! Carrito en el header
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 updateCart(ArrayCarrito);
