@@ -75,11 +75,11 @@ export function filtrarPorCategorias(categorias) {
     });
 }
 
-export function notiToastify() {
+export function notiToastify(destino) {
   Toastify({
     text: "Agregado al carrito de compras",
     duration: 3000,
-    destination: "./carrito.html",
+    destination: destino,
     newWindow: false,
     close: true,
     gravity: "top", // `top` or `bottom`

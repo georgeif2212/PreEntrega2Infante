@@ -1,12 +1,12 @@
 .box-shadow {
   border-radius: 6px;
   background: #f5f5f5;
-  box-shadow: 11px 11px 61px #dddddd, -11px -11px 61px #ffffff;
+  box-shadow: 5px 5px 31px #ebebeb, -5px -5px 31px #ffffff;
   transition: 500ms;
   &:hover {
     border-radius: 6px;
     background: #f5f5f5;
-    box-shadow: 7px 7px 9px #bababa, -7px -7px 9px #ffffff;
+    box-shadow: 7px 7px 11px #d0d0d0, -7px -7px 11px #ffffff;
   }
 }
 .box-product {
@@ -20,4 +20,3 @@
     box-shadow: 11px 11px 16px #e4e4e4, -11px -11px 16px #ffffff;
   }
 }
-

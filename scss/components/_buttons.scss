@@ -1,4 +1,4 @@
-button{
+button {
   border: none;
   background-color: $background-color;
 }
@@ -67,36 +67,7 @@ button{
     background-color: $tertiary-color;
   }
 }
-.input {
-  min-height: 50px;
-  max-width: 900px;
-  padding: 0 1rem;
-  color: #fff;
-  font-size: 15px;
-  border: 1px solid $primary-color;
-  border-radius: 10px;
-  background-color: transparent;
-  &:focus,
-  &:focus-visible {
-    border-color: #c9a031;
-    outline: none;
-  }
-}
-.button--submit {
-  min-height: 50px;
-  width: 150px;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 10px;
-  background-color: $primary-color;
-  color: #fff;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  &:hover {
-    background-color: $tertiary-color;
-  }
-}
+
 .button {
   position: relative;
   width: 150px;
@@ -158,6 +129,42 @@ button{
 }
 
 @media screen and (max-width: 767px) {
+  .input-group {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 0em 1em;
+    .input {
+      min-height: 50px;
+      max-width: 900px;
+      padding: 0 1rem;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid $primary-color;
+      border-radius: 10px;
+      background-color: transparent;
+      &:focus,
+      &:focus-visible {
+        border-color: #c9a031;
+        outline: none;
+      }
+    }
+    .button--submit {
+      min-height: 50px;
+      width: 150px;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      &:hover {
+        background-color: $tertiary-color;
+      }
+    }
+  }
   .rate {
     float: left;
     height: 46px;
@@ -233,6 +240,42 @@ button{
   }
 }
 @media screen and (min-width: 1023px) {
+  .input-group {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 0em 1em;
+    .input {
+      min-height: 50px;
+      max-width: 900px;
+      padding: 0 1rem;
+      color: #fff;
+      font-size: 15px;
+      border: 1px solid $primary-color;
+      border-radius: 10px;
+      background-color: transparent;
+      &:focus,
+      &:focus-visible {
+        border-color: #c9a031;
+        outline: none;
+      }
+    }
+    .button--submit {
+      min-height: 50px;
+      width: 150px;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      &:hover {
+        background-color: $tertiary-color;
+      }
+    }
+  }
   .rate {
     float: left;
     height: 46px;

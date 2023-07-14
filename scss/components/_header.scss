@@ -11,3 +11,40 @@ header {
     }
   }
 }
+@media screen and (max-width: 767px) {
+  .carrito-indicador {
+    position: absolute;
+    top: 268px;
+    right: 326px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(250, 250, 250);
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .carrito-indicador {
+    position: absolute;
+    top: 25px;
+    right: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(250, 250, 250);
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+
