@@ -20,17 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const article = document.createElement("article");
     article.classList.add("box-product");
     article.innerHTML = `
-      <a href="">
-        <div class="grid-container-productos_producto">
-          <img class="grid-container-productos_img" src="${url}" alt="" />
-          <div>
-            <h3 class="color-1 size-medium_s pt-2">${nombre}</h3>
-            <p class="color-2 size-small_l">${descripcion}</p>
-            <p class="products_price color-2 size-small_l"><b>$ ${precio}</b></p>
-            <p class="color-offer size-small_l px-2">Gratis en la compra de 1 sombrero</p>
-          </div>
+      <div class="grid-container-productos_producto">
+        <img class="grid-container-productos_img" src="${url}" alt="" />
+        <div>
+          <h3 class="color-1 size-medium_s pt-2">${nombre}</h3>
+          <p class="color-2 size-small_l mb-0 pb-0">${descripcion}</p>
+          <p class="products_price color-2 size-small_l mb-1"><b>$ ${precio}</b></p>
+          <p class="color-offer size-small_l px-2">Gratis en la compra de 1 sombrero</p>
         </div>
-      </a>
+      </div>
       `;
     idServicios.appendChild(article);
   });

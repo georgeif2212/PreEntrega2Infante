@@ -1,42 +1,87 @@
-.carrito {
-  padding: 2em;
-  min-height: 80vh;
-  .producto-carrito {
-    display: flex;
-    object-fit: cover;
+@media screen and (max-width: 767px) {
+  .carrito {
     padding: 2em 0em;
-    gap: 35px;
-    border-bottom: 1px solid #ddd9cc;
-    &__img {
-      width: 30%;
-      height: 40%;
-      overflow: hidden;
-    }
-    &-info {
+    min-height: 80vh;
+    .producto-carrito {
       display: flex;
-      width: 100%;
-      gap: 8em;
-      &-extra{
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
+      padding: 1em 0em;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid #ddd9cc;
+      &__img {
+        width: 25%;
+        height: 40%;
       }
-      &-selects {
+      &-info {
         display: flex;
-        gap: 30px;
+        &-extra {
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          width: 50px;
+        }
+        &-selects {
+          display: flex;
+        }
+      }
+    }
+    &-resumen {
+      &-calculo {
+        display: flex;
+        justify-content: space-between;
+        &-total {
+          display: flex;
+          justify-content: space-between;
+          padding: 1em 0em;
+          border-top: 1px #ddd9cc solid;
+          border-bottom: 1px #ddd9cc solid;
+        }
       }
     }
   }
-  &-resumen {
-    &-calculo {
+}
+
+@media screen and (min-width: 1023px) {
+  .carrito {
+    padding: 2em 0em;
+    min-height: 80vh;
+    .producto-carrito {
       display: flex;
-      justify-content: space-between;
-      &-total {
+      object-fit: cover;
+      padding: 2em 0em;
+      gap: 35px;
+      border-bottom: 1px solid #ddd9cc;
+      &__img {
+        width: 30%;
+        height: 40%;
+        overflow: hidden;
+      }
+      &-info {
+        display: flex;
+        width: 100%;
+        gap: 8em;
+        &-extra {
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+        }
+        &-selects {
+          display: flex;
+          gap: 30px;
+        }
+      }
+    }
+    &-resumen {
+      &-calculo {
         display: flex;
         justify-content: space-between;
-        padding: 1em 0em;
-        border-top: 1px #ddd9cc solid;
-        border-bottom: 1px #ddd9cc solid;
+        &-total {
+          display: flex;
+          justify-content: space-between;
+          padding: 1em 0em;
+          border-top: 1px #ddd9cc solid;
+          border-bottom: 1px #ddd9cc solid;
+        }
       }
     }
   }
