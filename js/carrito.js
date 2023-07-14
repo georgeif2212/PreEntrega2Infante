@@ -133,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
           : subtotal + parseInt(envio) - descuento;
 
       totalElemento.textContent = total.toFixed(2);
-
       costoEnvio.textContent = envio;
     };
 
@@ -183,11 +182,11 @@ document.addEventListener("DOMContentLoaded", () => {
           ArrayCarrito.splice(0, ArrayCarrito.length);
           localStorage.clear();
           containerCarrito.innerHTML = `
-          <div class="d-flex align-items-center justify-content-center pt-5">
-            <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
-              No tienes productos en el carrito, ve a comprar
-            </h4>
-          </div>
+            <div class="d-flex align-items-center justify-content-center pt-5">
+              <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
+                No tienes productos en el carrito, ve a comprar
+              </h4>
+            </div>
           `;
           const ArrayCarrito2 = ArrayCarrito;
           const carritoIndicador = document.querySelector("#carrito-indicador");
