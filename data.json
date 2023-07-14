@@ -4,7 +4,7 @@
     "color": "Cafe",
     "talla": 50,
     "precio": 250,
-    "url": "../img/producto1.jpg",
+    "url": "../img/producto1.png",
     "categorias": ["Bristol", "Niño", "Invierno", "Formal"],
     "seccion": "All"
   },
@@ -13,7 +13,7 @@
     "color": "Negro",
     "talla": 54,
     "precio": 229,
-    "url": "../img/producto2.jpg",
+    "url": "../img/producto2.png",
     "categorias": ["Bombín", "Caballero", "Verano", "Casual"],
     "seccion": "All"
   },
@@ -22,7 +22,7 @@
     "color": "Azul",
     "talla": 48,
     "precio": 249,
-    "url": "../img/producto3.jpg",
+    "url": "../img/producto3.png",
     "categorias": ["Fedora", "Dama", "Verano", "Clásico"],
     "seccion": "All"
   },
@@ -31,7 +31,7 @@
     "color": "Verde",
     "talla": 46,
     "precio": 200,
-    "url": "../img/producto4.jpg",
+    "url": "../img/producto4.png",
     "categorias": ["Porkpie", "Niño", "Verano", "Clásico"],
     "seccion": "All"
   },
@@ -40,7 +40,7 @@
     "color": "Beige",
     "talla": 40,
     "precio": 300,
-    "url": "../img/producto5.jpg",
+    "url": "../img/producto5.png",
     "categorias": ["Canotier", "Caballero", "Invierno", "Casual"],
     "seccion": "All"
   },
@@ -49,7 +49,7 @@
     "color": "Blanco",
     "talla": 40,
     "precio": 324,
-    "url": "../img/producto6.jpg",
+    "url": "../img/producto6.png",
     "categorias": ["Gorra", "Dama", "Invierno", "Formal"],
     "seccion": "All"
   },
@@ -58,7 +58,7 @@
     "color": "Gris",
     "talla": 42,
     "precio": 360,
-    "url": "../img/producto7.jpg",
+    "url": "../img/producto7.png",
     "categorias": ["Floppy", "Niño", "Invierno", "Formal"],
     "seccion": "All"
   },
@@ -67,7 +67,7 @@
     "color": "Negro",
     "talla": 54,
     "precio": 452,
-    "url": "../img/producto8.jpg",
+    "url": "../img/producto8.png",
     "categorias": ["Panamá", "Caballero", "Verano", "Casual"],
     "seccion": "All"
   },
@@ -76,7 +76,7 @@
     "color": "Amarillo",
     "talla": 48,
     "precio": 400,
-    "url": "../img/producto9.jpg",
+    "url": "../img/producto9.png",
     "categorias": ["Trillby", "Dama", "Verano", "Clásico"],
     "seccion": "All"
   },
@@ -85,7 +85,7 @@
     "color": "Rojo",
     "talla": 46,
     "precio": 420,
-    "url": "../img/producto10.jpg",
+    "url": "../img/producto10.png",
     "categorias": ["Chistera", "Niño", "Verano", "Clásico"],
     "seccion": "All"
   },
@@ -103,7 +103,7 @@
     "color": "Cafe",
     "talla": 40,
     "precio": 400,
-    "url": "../img/producto12.jpg",
+    "url": "../img/producto12.png",
     "categorias": ["Cloche", "Dama", "Invierno", "Formal"],
     "seccion": "All"
   },

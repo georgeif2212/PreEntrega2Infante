@@ -6,8 +6,8 @@ const containerCarrito = document.querySelector("#carrito-productos");
 document.addEventListener("DOMContentLoaded", () => {
   if (ArrayCarrito.length == 0) {
     containerCarrito.innerHTML = `
-          <div class="d-flex align-items-center justify-content-center pt-5">
-            <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
+          <div class="d-flex align-items-center justify-content-center pt-lg-5 pt-sm-5">
+            <h4 class="color-3 size-medium_m text-center align-self-center pt-lg-5 pt-sm--5">
               No tienes productos en el carrito, ve a comprar
             </h4>
           </div>
