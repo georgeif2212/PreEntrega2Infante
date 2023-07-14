@@ -1,194 +1,218 @@
 [
   {
+    "id":1,
     "color": "Cafe",
     "talla": 50,
     "precio": 250,
-    "imagen": "../img/producto1.jpg",
+    "url": "../img/producto1.jpg",
     "categorias": ["Bristol", "Niño", "Invierno", "Formal"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":2,
     "color": "Negro",
     "talla": 54,
     "precio": 229,
-    "imagen": "../img/producto2.jpg",
+    "url": "../img/producto2.jpg",
     "categorias": ["Bombín", "Caballero", "Verano", "Casual"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":3,
     "color": "Azul",
     "talla": 48,
     "precio": 249,
-    "imagen": "../img/producto3.jpg",
+    "url": "../img/producto3.jpg",
     "categorias": ["Fedora", "Dama", "Verano", "Clásico"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":4,
     "color": "Verde",
     "talla": 46,
     "precio": 200,
-    "imagen": "../img/producto4.jpg",
+    "url": "../img/producto4.jpg",
     "categorias": ["Porkpie", "Niño", "Verano", "Clásico"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":5,
     "color": "Beige",
     "talla": 40,
     "precio": 300,
-    "imagen": "../img/producto5.jpg",
+    "url": "../img/producto5.jpg",
     "categorias": ["Canotier", "Caballero", "Invierno", "Casual"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":6,
     "color": "Blanco",
     "talla": 40,
     "precio": 324,
-    "imagen": "../img/producto6.jpg",
+    "url": "../img/producto6.jpg",
     "categorias": ["Gorra", "Dama", "Invierno", "Formal"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":7,
     "color": "Gris",
     "talla": 42,
     "precio": 360,
-    "imagen": "../img/producto7.jpg",
+    "url": "../img/producto7.jpg",
     "categorias": ["Floppy", "Niño", "Invierno", "Formal"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":8,
     "color": "Negro",
     "talla": 54,
     "precio": 452,
-    "imagen": "../img/producto8.jpg",
+    "url": "../img/producto8.jpg",
     "categorias": ["Panamá", "Caballero", "Verano", "Casual"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":9,
     "color": "Amarillo",
     "talla": 48,
     "precio": 400,
-    "imagen": "../img/producto9.jpg",
+    "url": "../img/producto9.jpg",
     "categorias": ["Trillby", "Dama", "Verano", "Clásico"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":10,
     "color": "Rojo",
     "talla": 46,
     "precio": 420,
-    "imagen": "../img/producto10.jpg",
+    "url": "../img/producto10.jpg",
     "categorias": ["Chistera", "Niño", "Verano", "Clásico"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":11,
     "color": "Cafe",
     "talla": 40,
     "precio": 369,
-    "imagen": "../img/producto11.png",
+    "url": "../img/producto11.png",
     "categorias": ["Turbante", "Caballero", "Invierno", "Casual"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":12,
     "color": "Cafe",
     "talla": 40,
     "precio": 400,
-    "imagen": "../img/producto12.jpg",
+    "url": "../img/producto12.jpg",
     "categorias": ["Cloche", "Dama", "Invierno", "Formal"],
-    "section": "All"
+    "seccion": "All"
   },
   {
+    "id":13,
     "color": "Cafe",
     "talla": 50,
     "precio": 250,
-    "imagen": "../img/featured1.jpg",
+    "url": "../img/featured1.jpg",
     "categorias": ["Bristol", "Niño", "Invierno", "Formal"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":14,
     "color": "Negro",
     "talla": 54,
     "precio": 229,
-    "imagen": "../img/featured2.jpg",
+    "url": "../img/featured2.jpg",
     "categorias": ["Bombín", "Caballero", "Verano", "Casual"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":15,
     "color": "Azul",
     "talla": 48,
     "precio": 249,
-    "imagen": "../img/featured3.jpg",
+    "url": "../img/featured3.jpg",
     "categorias": ["Fedora", "Dama", "Verano", "Clásico"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":16,
     "color": "Verde",
     "talla": 46,
     "precio": 200,
-    "imagen": "../img/featured4.jpg",
+    "url": "../img/featured4.jpg",
     "categorias": ["Porkpie", "Niño", "Verano", "Clásico"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":17,
     "color": "Beige",
     "talla": 40,
     "precio": 300,
-    "imagen": "../img/featured5.jpg",
+    "url": "../img/featured5.jpg",
     "categorias": ["Canotier", "Caballero", "Invierno", "Casual"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":18,
     "color": "Blanco",
     "talla": 40,
     "precio": 324,
-    "imagen": "../img/featured6.jpg",
+    "url": "../img/featured6.jpg",
     "categorias": ["Gorra", "Dama", "Invierno", "Formal"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":19,
     "color": "Gris",
     "talla": 42,
     "precio": 360,
-    "imagen": "../img/featured7.jpg",
+    "url": "../img/featured7.jpg",
     "categorias": ["Floppy", "Niño", "Invierno", "Formal"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":20,
     "color": "Negro",
     "talla": 54,
     "precio": 452,
-    "imagen": "../img/featured8.jpg",
+    "url": "../img/featured8.jpg",
     "categorias": ["Panamá", "Caballero", "Verano", "Casual"],
-    "section": "Featured"
+    "seccion": "Featured"
   },
   {
+    "id":21,
     "color": "Amarillo",
     "talla": 48,
     "precio": 400,
-    "imagen": "../img/rated-2.jpg",
+    "url": "../img/rated-2.jpg",
     "categorias": ["Trillby", "Dama", "Verano", "Clásico"],
-    "section": "Rated"
+    "seccion": "Rated"
   },
   {
+    "id":22,
     "color": "Rojo",
     "talla": 46,
     "precio": 420,
-    "imagen": "../img/rated-3.jpg",
+    "url": "../img/rated-3.jpg",
     "categorias": ["Chistera", "Niño", "Verano", "Clásico"],
-    "section": "Rated"
+    "seccion": "Rated"
   },
   {
+    "id":23,
     "color": "Cafe",
     "talla": 40,
     "precio": 369,
-    "imagen": "../img/rated-4.jpg",
+    "url": "../img/rated-4.jpg",
     "categorias": ["Turbante", "Caballero", "Invierno", "Casual"],
-    "section": "Rated"
+    "seccion": "Rated"
   },
   {
+    "id":24,
     "color": "Cafe",
     "talla": 40,
     "precio": 400,
-    "imagen": "../img/rated-5.jpg",
+    "url": "../img/rated-5.jpg",
     "categorias": ["Cloche", "Dama", "Invierno", "Formal"],
-    "section": "Rated"
+    "seccion": "Rated"
   }
 ]
