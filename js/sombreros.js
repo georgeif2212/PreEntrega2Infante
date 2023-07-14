@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   servicios.forEach((el) => {
     const { url, nombre, descripcion, precio } = el;
     const article = document.createElement("article");
-    article.classList.add("box-shadow");
+    article.classList.add("box-product");
     article.innerHTML = `
       <a href="">
         <div class="grid-container-productos_producto">
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3 class="color-1 size-medium_s pt-2">${nombre}</h3>
             <p class="color-2 size-small_l">${descripcion}</p>
             <p class="products_price color-2 size-small_l"><b>$ ${precio}</b></p>
-            <p class="color-offer size-small_l">Gratis en la compra de 1 sombrero</p>
+            <p class="color-offer size-small_l px-2">Gratis en la compra de 1 sombrero</p>
           </div>
         </div>
       </a>
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="color-2 size-small_l producto-info_category mb-0 pb-0">
               ${categorias[1]}
               </p>
-              <p class="color-3 size-small_l">${categorias[2]}</p>
+              <p class="color-3 size-small_l mb-1 pb-0">${categorias[2]}</p>
               <div class="producto-info-button">
                 <button type="button" class="button add-cart">
                   <span class="button__text">Agregar</span>
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <line y2="12" y1="12" x2="19" x1="5"></line></svg
                   ></span>
                 </button>
-                <p class="producto-info-button_precio color-2">$ ${precio}</p>
+                <p class="producto-info-button_precio color-2"><b>$ ${precio}</b></B></p>
               </div>
             </div>
           `;

@@ -244,25 +244,25 @@ main {
 .box-shadow {
   border-radius: 6px;
   background: #f5f5f5;
-  box-shadow: 5px 5px 31px #ebebeb, -5px -5px 31px #ffffff;
+  box-shadow: 7px 7px 15px #e6e6e6, -7px -7px 15px #ffffff;
   transition: 500ms;
 }
 .box-shadow:hover {
   border-radius: 6px;
   background: #f5f5f5;
-  box-shadow: 7px 7px 11px #d0d0d0, -7px -7px 11px #ffffff;
+  box-shadow: 7px 7px 14px #dadada, -7px -7px 14px #ffffff;
 }
 
 .box-product {
   border-radius: 6px;
   background: #f5f5f5;
-  box-shadow: 11px 11px 22px #f0f0f0, -11px -11px 22px #fafafa;
+  box-shadow: 7px 7px 15px #e6e6e6, -7px -7px 15px #ffffff;
   transition: 500ms;
 }
 .box-product:hover {
   border-radius: 6px;
   background: #f5f5f5;
-  box-shadow: 11px 11px 16px #e4e4e4, -11px -11px 16px #ffffff;
+  box-shadow: 7px 7px 14px #dadada, -7px -7px 14px #ffffff;
 }
 
 .icon-tabler-shopping-cart {
@@ -947,14 +947,25 @@ button {
     justify-content: center;
     border-bottom: 1px solid #ddd9cc;
   }
-  main .hero-categories .hero-intro .titulo-container {
+  main .hero-categories .hero-intro-categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  main .hero-categories .hero-intro-categories_title {
+    font-family: "Raleway", "Open-sans";
+  }
+  main .hero-categories .hero-intro-categories_subtitle {
+    font-family: "Raleway", "Open-sans";
+  }
+  main .hero-categories .hero-intro-categories .titulo-container {
     display: inline-block;
     position: relative;
     margin-bottom: 2em;
     padding-bottom: 0.5em;
-    width: 50vw;
   }
-  main .hero-categories .hero-intro .titulo-container::after {
+  main .hero-categories .hero-intro-categories .titulo-container::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -962,7 +973,7 @@ button {
     width: 60%; /* Ajusta este valor según el ancho del borde que deseas (por ejemplo, 40% para ocupar el 40% del ancho) */
     border-bottom: 2px solid #ddd9cc; /* Establece el estilo del borde inferior */
   }
-  main .hero-categories .hero-intro .titulo-container .titulo {
+  main .hero-categories .hero-intro-categories .titulo-container .titulo {
     font-family: "Raleway", "Open-sans";
   }
   main .featured-categories {
@@ -971,47 +982,45 @@ button {
     justify-content: center;
   }
   main .featured-categories p {
-    width: 40vw;
     align-self: center;
   }
   main .featured-categories h2 {
     padding-bottom: 0.2em;
   }
   main .featured-categories .categories {
-    padding: 1em 4em 0 4em;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de tamaño igual */
+    grid-row-gap: 3em;
+    grid-column-gap: 1em;
+    padding-bottom: 2em;
   }
   main .featured-categories .categories-category {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 200px;
   }
   main .featured-categories .categories-category img {
-    height: 20em;
+    object-fit: cover;
     width: 100%;
-    overflow: hidden;
+    height: 100%;
   }
   main .featured-categories .categories-category h3 {
-    padding: 0.5em;
-    text-align: center;
-    font-weight: 300;
+    margin-top: 1rem;
   }
   main .all-products {
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
-    row-gap: 10px;
-    column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
   }
   main .all-products .producto {
+    padding: 1em 0em;
     display: flex;
     flex-flow: column;
     align-items: center;
-    padding: 1em;
     margin-bottom: 1em;
-    object-fit: cover;
     object-position: center center;
-    height: 20em;
   }
   main .all-products .producto-img {
     height: 60%;
@@ -1031,7 +1040,8 @@ button {
   }
   main .all-products .producto-info-button {
     display: flex;
-    gap: 20px;
+    flex-flow: column;
+    gap: 10px;
     align-items: center;
   }
   main .all-products .producto-info-button p {
@@ -1039,44 +1049,31 @@ button {
   }
   main .grid-container {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* 1/4 - 3/4 */
-    gap: 20px; /* Espacio entre las columnas */
-    padding: 3em 2em 1em 2em;
+    grid-template-columns: 1fr;
   }
-  main .grid-container-productos {
-    display: flex;
-    flex-flow: row wrap;
-    padding-bottom: 2em;
-    justify-content: space-evenly;
-  }
-  main .grid-container-productos article {
-    width: calc(50% - 10px); /* Ajusta el ancho de cada artículo según tus necesidades */
-    margin: 5px;
-    margin-right: 0.3em;
-    margin-bottom: 1.5em;
-  }
-  main .grid-container-productos article:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último artículo para evitar espacio adicional */
-  }
-  main .grid-container-productos_producto {
-    padding: 1em 0.5em;
-    display: flex;
-    flex-flow: row;
-    gap: 10px;
-  }
-  main .grid-container-productos_producto div {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-  }
-  main .grid-container-productos_producto div p {
-    margin-bottom: 0%;
+  main .grid-container-1 {
+    padding: 20px;
     text-align: center;
   }
+  main .grid-container-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Actualización a 2 columnas */
+    gap: 20px;
+    padding: 1em;
+    /* Estilos para el contenido dentro de cada artículo */
+  }
   main .grid-container-productos_img {
-    height: 20vh;
-    width: auto;
+    width: 100%;
+  }
+  main .grid-container-productos article {
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  main .grid-container-productos .grid-container-productos_producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
 @media screen and (min-width: 767px) and (max-width: 1023px) {
@@ -1246,111 +1243,200 @@ button {
     width: auto;
   }
 }
-.checkbox-wrapper-24 {
-  display: flex;
-  justify-content: space-around;
+@media screen and (max-width: 767px) {
+  .checkbox-wrapper-24 {
+    display: flex;
+    justify-content: center;
+  }
+  .checkbox-wrapper-24 .checkbox {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .checkbox-wrapper-24 label {
+    display: inline-block;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+  }
+  .checkbox-wrapper-24 label span {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center;
+    border: 2px solid #333;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  }
+  .checkbox-wrapper-24 label span:before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    border-radius: 2px;
+    background: #333;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 13px;
+    left: 9px;
+    transition: width 50ms ease 50ms;
+    transform-origin: 0% 0%;
+  }
+  .checkbox-wrapper-24 label span:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #333;
+    position: absolute;
+    transform: rotate(305deg);
+    top: 16px;
+    left: 10px;
+    transition: width 50ms ease;
+    transform-origin: 0% 0%;
+  }
+  .checkbox-wrapper-24 label:hover span:before {
+    width: 5px;
+    transition: width 100ms ease;
+  }
+  .checkbox-wrapper-24 label:hover span:after {
+    width: 10px;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox] {
+    display: none;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label span {
+    background-color: #333;
+    transform: scale(1.25);
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label span:after {
+    width: 10px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label span:before {
+    width: 5px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span {
+    background-color: #333;
+    transform: scale(1.25);
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:after {
+    width: 10px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:before {
+    width: 5px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
 }
-.checkbox-wrapper-24 .checkbox {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
-  text-align: center;
+@media screen and (min-width: 1023px) {
+  .checkbox-wrapper-24 {
+    display: flex;
+    justify-content: space-around;
+  }
+  .checkbox-wrapper-24 .checkbox {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .checkbox-wrapper-24 label {
+    display: inline-block;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+  }
+  .checkbox-wrapper-24 label span {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center;
+    border: 2px solid #333;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  }
+  .checkbox-wrapper-24 label span:before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    border-radius: 2px;
+    background: #333;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 13px;
+    left: 9px;
+    transition: width 50ms ease 50ms;
+    transform-origin: 0% 0%;
+  }
+  .checkbox-wrapper-24 label span:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #333;
+    position: absolute;
+    transform: rotate(305deg);
+    top: 16px;
+    left: 10px;
+    transition: width 50ms ease;
+    transform-origin: 0% 0%;
+  }
+  .checkbox-wrapper-24 label:hover span:before {
+    width: 5px;
+    transition: width 100ms ease;
+  }
+  .checkbox-wrapper-24 label:hover span:after {
+    width: 10px;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox] {
+    display: none;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label span {
+    background-color: #333;
+    transform: scale(1.25);
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label span:after {
+    width: 10px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label span:before {
+    width: 5px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span {
+    background-color: #333;
+    transform: scale(1.25);
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:after {
+    width: 10px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
+  .checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:before {
+    width: 5px;
+    background: #fff;
+    transition: width 150ms ease 100ms;
+  }
 }
-.checkbox-wrapper-24 label {
-  display: inline-block;
-  color: #333;
-  cursor: pointer;
-  position: relative;
-}
-.checkbox-wrapper-24 label span {
-  display: inline-block;
-  position: relative;
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  transform-origin: center;
-  border: 2px solid #333;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 10px;
-  transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
-}
-.checkbox-wrapper-24 label span:before {
-  content: "";
-  width: 0px;
-  height: 2px;
-  border-radius: 2px;
-  background: #333;
-  position: absolute;
-  transform: rotate(45deg);
-  top: 13px;
-  left: 9px;
-  transition: width 50ms ease 50ms;
-  transform-origin: 0% 0%;
-}
-.checkbox-wrapper-24 label span:after {
-  content: "";
-  width: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: #333;
-  position: absolute;
-  transform: rotate(305deg);
-  top: 16px;
-  left: 10px;
-  transition: width 50ms ease;
-  transform-origin: 0% 0%;
-}
-
-.checkbox-wrapper-24 label:hover span:before {
-  width: 5px;
-  transition: width 100ms ease;
-}
-
-.checkbox-wrapper-24 label:hover span:after {
-  width: 10px;
-  transition: width 150ms ease 100ms;
-}
-
-.checkbox-wrapper-24 input[type=checkbox] {
-  display: none;
-}
-
-.checkbox-wrapper-24 input[type=checkbox]:checked + label span {
-  background-color: #333;
-  transform: scale(1.25);
-}
-
-.checkbox-wrapper-24 input[type=checkbox]:checked + label span:after {
-  width: 10px;
-  background: #fff;
-  transition: width 150ms ease 100ms;
-}
-
-.checkbox-wrapper-24 input[type=checkbox]:checked + label span:before {
-  width: 5px;
-  background: #fff;
-  transition: width 150ms ease 100ms;
-}
-
-.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span {
-  background-color: #333;
-  transform: scale(1.25);
-}
-
-.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:after {
-  width: 10px;
-  background: #fff;
-  transition: width 150ms ease 100ms;
-}
-
-.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:before {
-  width: 5px;
-  background: #fff;
-  transition: width 150ms ease 100ms;
-}
-
 .my-select {
   background-color: #F5F5F5;
   color: #333;

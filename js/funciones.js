@@ -44,7 +44,7 @@ export function filtrarPorCategorias(categorias) {
               <div class="producto-info">
                 <h3 class="color-1 size-medium_s producto-info_title pb-1">${categorias[0]}</h3>
                 <p class="color-2 size-small_l producto-info_category mb-0 pb-0">${categorias[1]}</p>
-                <p class="color-3 size-small_l">${categorias[2]}</p>
+                <p class="color-3 size-small_l mb-1 pb-0">${categorias[2]}</p>
                 <div class="producto-info-button">
                   <button type="button" class="button add-cart">
                     <span class="button__text">Agregar</span>
@@ -55,7 +55,7 @@ export function filtrarPorCategorias(categorias) {
                       </svg>
                     </span>
                   </button>
-                  <p class="producto-info-button_precio color-2">$ ${precio}</p>
+                  <p class="producto-info-button_precio color-2"><b>$ ${precio}</b> </p>
                 </div>
               </div>
             `;

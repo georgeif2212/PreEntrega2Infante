@@ -6,13 +6,22 @@
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid #ddd9cc;
-      .hero-intro {
+      .hero-intro-categories {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        &_title {
+          font-family: "Raleway", "Open-sans";
+        }
+        &_subtitle {
+          font-family: "Raleway", "Open-sans";
+        }
         .titulo-container {
           display: inline-block;
           position: relative;
           margin-bottom: 2em;
           padding-bottom: 0.5em;
-          width: 50vw;
           &::after {
             content: "";
             position: absolute;
@@ -32,29 +41,33 @@
       flex-flow: column;
       justify-content: center;
       p {
-        width: 40vw;
         align-self: center;
       }
       h2 {
         padding-bottom: 0.2em;
       }
       .categories {
-        padding: 1em 4em 0 4em;
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(
+          2,
+          1fr
+        ); /* Dos columnas de tamaño igual */
+        grid-row-gap: 3em;
+        grid-column-gap: 1em;
+        padding-bottom: 2em;
         &-category {
           display: flex;
-          flex-flow: column;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          height: 200px;
           img {
-            height: 20em;
+            object-fit: cover;
             width: 100%;
-            overflow: hidden;
+            height: 100%;
           }
           h3 {
-            padding: 0.5em;
-            text-align: center;
-            font-weight: 300;
+            margin-top: 1rem;
           }
         }
       }
@@ -62,23 +75,19 @@
 
     .all-products {
       display: grid;
-      grid-template-columns: repeat(4, minmax(200px, 1fr));
-      row-gap: 10px;
-      column-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 15px;
       .producto {
+        padding: 1em 0em;
         display: flex;
         flex-flow: column;
         align-items: center;
-        padding: 1em;
+
         margin-bottom: 1em;
-        object-fit: cover;
         object-position: center center;
-        height: 20em;
-        
         &-img {
           height: 60%;
           width: 80%;
-          
         }
         &-info {
           display: flex;
@@ -93,7 +102,8 @@
           }
           &-button {
             display: flex;
-            gap: 20px;
+            flex-flow: column;
+            gap: 10px;
             align-items: center;
             p {
               margin-bottom: 0%;
@@ -105,49 +115,40 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr 3fr; /* 1/4 - 3/4 */
-      gap: 20px; /* Espacio entre las columnas */
-      padding: 3em 2em 1em 2em;
+      grid-template-columns: 1fr;
+      &-1 {
+        padding: 20px;
+        text-align: center;
+      }
       &-productos {
-        display: flex;
-        flex-flow: row wrap;
-        padding-bottom: 2em;
-        justify-content: space-evenly;
-        article {
-          width: calc(
-            50% - 10px
-          ); /* Ajusta el ancho de cada artículo según tus necesidades */
-          margin: 5px;
-          margin-right: 0.3em;
-          margin-bottom: 1.5em;
-          &:last-child {
-            margin-right: 0; /* Elimina el margen derecho del último artículo para evitar espacio adicional */
-          }
-        }
-        &_producto {
-          padding: 1em 0.5em;
-          display: flex;
-          flex-flow: row;
-          gap: 10px;
-          div {
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-            align-items: center;
-            p {
-              margin-bottom: 0%; 
-              text-align: center;
-            }
-          }
-        }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Actualización a 2 columnas */
+        gap: 20px;
+        padding: 1em;
         &_img {
-          height: 20vh;
-          width: auto;
+          width: 100%;
+        }
+        article {          
+          text-align: center;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para el contenido dentro de cada artículo */
+        .grid-container-productos_producto {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
         }
       }
     }
+
+    
+
+    
   }
 }
+
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   main {
     .hero-categories {
@@ -255,11 +256,10 @@
         object-fit: cover;
         object-position: center center;
         height: 20em;
-        
+
         &-img {
           height: 60%;
           width: 80%;
-          
         }
         &-info {
           display: flex;
@@ -316,7 +316,7 @@
             justify-content: center;
             align-items: center;
             p {
-              margin-bottom: 0%; 
+              margin-bottom: 0%;
               text-align: center;
             }
           }
