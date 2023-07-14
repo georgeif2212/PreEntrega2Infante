@@ -8,6 +8,9 @@ updateCart(ArrayCarrito);
 // ! Carrusel html
 const featuredProdcuts = document.querySelector("#featured-products");
 document.addEventListener("DOMContentLoaded", () => {
+  fetch('./data.json')
+    .then((response)=>{return response.json()})
+    .then((response)=>{console.log(response);})
   featuredProdcuts.innerHTML = "";
   sombreros.forEach((el) => {
     if (el.seccion === "Featured") {
@@ -100,8 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 let articleCounter = 1;
 const column1 = document.getElementById('secondary-column-1');
 const column2 = document.getElementById('secondary-column-2');
-console.log(column1);
-console.log(column2);
 
 document.addEventListener("DOMContentLoaded",()=>{
   column1.innerHTML="";
