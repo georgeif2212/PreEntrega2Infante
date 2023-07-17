@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ArrayCarrito.push(el);
               //localStorage.clear();
               localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-              notiToastify();
+              notiToastify("./carrito.html");
               updateCart(ArrayCarrito);
             });
           });

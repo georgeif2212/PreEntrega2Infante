@@ -64,7 +64,7 @@ export function filtrarPorCategorias(categorias) {
               button.addEventListener("click", () => {
                 ArrayCarrito.push(el);
                 localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-                notiToastify();
+                notiToastify("./carrito.html");
                 updateCart(ArrayCarrito);
               });
             });

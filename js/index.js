@@ -156,26 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener("click", () => {
               ArrayCarrito.push(el);
               localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-              Toastify({
-                text: "Agregado al carrito de compras",
-                duration: 3000,
-                destination: "./carrito.html",
-                newWindow: false,
-                close: true,
-                gravity: "top", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                  background: "rgb(168,232,144)",
-                  background:
-                    "linear-gradient(90deg, rgba(168,232,144,1) 22%, rgba(84,180,53,1) 80%)",
-                  color: "white",
-                },
-                offset: {
-                  y: 45,
-                },
-                onClick: function () {}, // Callback after click
-              }).showToast();
+              notiToastify("./pages/carrito.html");
               updateCart(ArrayCarrito);
             });
           });
