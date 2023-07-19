@@ -1,17 +1,20 @@
-import { updateCart } from "./funciones.js";
+import {
+  updateCart,
+  updateSummary,
+  emptySummary,
+  emptyCart,
+  actualizarPrecio,
+  eliminarArticulo,
+} from "./funciones.js";
 const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const containerCarrito = document.querySelector("#carrito-productos");
+const containerSummary = document.querySelector(".carrito-resumen");
 
 document.addEventListener("DOMContentLoaded", () => {
   if (ArrayCarrito.length == 0) {
-    containerCarrito.innerHTML = `
-          <div class="d-flex align-items-center justify-content-center pt-lg-5 pt-sm-5">
-            <h4 class="color-3 size-medium_m text-center align-self-center pt-lg-5 pt-sm--5">
-              No tienes productos en el carrito, ve a comprar
-            </h4>
-          </div>
-          `;
+    emptyCart(containerCarrito);
+    emptySummary(containerSummary);
   } else {
     containerCarrito.innerHTML = "";
     ArrayCarrito.forEach((el) => {
@@ -92,55 +95,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalElemento = document.querySelector("#total");
     const descuentoTotal = document.querySelector("#descuento");
     const costoEnvio = document.querySelector("#envio");
-    let descuento;
-
-    // Agregar el event listener a todos los elementos de cantidad
-    selectCantidad.forEach((cantidadElemento, index) => {
-      const precioElemento = preciosElementos[index];
-      cantidadElemento.addEventListener("change", () => {
-        actualizarPrecio(cantidadElemento, precioElemento, subtotalElemento);
-      });
-    });
-
-    // Función para actualizar el precio y subtotal
-    const actualizarPrecio = (
-      cantidadElemento,
-      precioElemento,
-      subtotalElemento
-    ) => {
-      const cantidadSeleccionada = parseInt(cantidadElemento.value);
-      const precioOriginal = parseInt(precioElemento.dataset.precioOriginal);
-      const nuevoPrecio = precioOriginal * cantidadSeleccionada;
-      precioElemento.textContent = nuevoPrecio;
-
-      // Actualizar subtotal
-      let subtotal = 0;
-      const preciosElementos = document.querySelectorAll("#precio");
-      preciosElementos.forEach((elemento) => {
-        subtotal += parseInt(elemento.textContent);
-      });
-
-      subtotalElemento.textContent = subtotal;
-      descuento = subtotal * 0.1;
-      descuentoTotal.textContent = descuento.toFixed(2);
-
-      let envio = subtotal > 500 ? "Gratis" : subtotal * 0.4;
-      envio = envio == "Gratis" ? "Gratis" : envio.toFixed(2);
-
-      let total =
-        envio == "Gratis"
-          ? subtotal - descuento
-          : subtotal + parseInt(envio) - descuento;
-
-      totalElemento.textContent = total.toFixed(2);
-      costoEnvio.textContent = envio;
-    };
-
     // Obtener los elementos de los botones de eliminar
     const botonesEliminar = document.querySelectorAll(
       ".producto-carrito-info-extra button"
     );
 
+    const suma = Array.from(preciosElementos).reduce((acumulador, elemento) => {
+      const valor = parseInt(elemento.textContent); // Supongamos que los elementos contienen valores numéricos en su texto
+      return acumulador + valor;
+    }, 0);
+
+    updateSummary(
+      suma,
+      subtotalElemento,
+      descuentoTotal,
+      totalElemento,
+      costoEnvio
+    );
+
+    // Agregar el event listener a todos los elementos de cantidad
+    selectCantidad.forEach((cantidadElemento, index) => {
+      const precioElemento = preciosElementos[index];
+      cantidadElemento.addEventListener("change", () => {
+        actualizarPrecio(
+          cantidadElemento,
+          precioElemento,
+          subtotalElemento,
+          descuentoTotal,
+          totalElemento,
+          costoEnvio
+        );
+      });
+    });
+
+    // Agregar el event listener a todos los elementos de eliminar
     botonesEliminar.forEach((boton, index) => {
       boton.addEventListener("click", () => {
         eliminarArticulo(index);
@@ -148,53 +136,54 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Función para eliminar un artículo del carrito
-    const eliminarArticulo = (index) => {
-      ArrayCarrito.splice(index, 1);
-      localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
-      location.reload();
-    };
-
+    // Event Listener para sweet alert al pagar carrito
     const buttonPagar = document.querySelector("#pagar");
     buttonPagar.addEventListener("click", () => {
-      Swal.fire({
-        title: "¿Quieres confirmar la compra?",
-        text: "Puedes hacer cambios cuando tú quieras",
-        showCancelButton: true,
-        confirmButtonColor: "#00a650",
-        cancelButtonColor: "#B7B7B7",
-        confirmButtonText: "Aceptar compra",
-        backdrop: `
-        rgba(192, 148, 81, 0.1)
-      `,
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            icon: "success",
-            title: "¡Compra exitosa!",
-            text: "Tu compra se ha registrado",
-            confirmButtonColor: "#00a650",
-            confirmButtonText: "OK",
-            backdrop: `
+      if (ArrayCarrito != 0) {
+        Swal.fire({
+          title: "¿Quieres confirmar la compra?",
+          text: "Puedes hacer cambios cuando tú quieras",
+          showCancelButton: true,
+          confirmButtonColor: "#00a650",
+          cancelButtonColor: "#B7B7B7",
+          confirmButtonText: "Aceptar compra",
+          backdrop: `
             rgba(192, 148, 81, 0.1)
           `,
-          });
-          ArrayCarrito.splice(0, ArrayCarrito.length);
-          localStorage.clear();
-          containerCarrito.innerHTML = `
-            <div class="d-flex align-items-center justify-content-center pt-5">
-              <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
-                No tienes productos en el carrito, ve a comprar
-              </h4>
-            </div>
-          `;
-          const ArrayCarrito2 = ArrayCarrito;
-          const carritoIndicador = document.querySelector("#carrito-indicador");
-          const cantidadCarrito = ArrayCarrito2.length;
-
-          carritoIndicador.textContent = cantidadCarrito;
-        }
-      });
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              icon: "success",
+              title: "¡Compra exitosa!",
+              text: "Tu compra se ha registrado",
+              confirmButtonColor: "#00a650",
+              confirmButtonText: "OK",
+              backdrop: `
+              rgba(192, 148, 81, 0.1)
+            `,
+            });
+            ArrayCarrito.splice(0, ArrayCarrito.length);
+            localStorage.clear();
+            emptyCart(containerCarrito);
+            emptySummary(containerSummary);
+            const ArrayCarrito2 = ArrayCarrito;
+            const carritoIndicador =
+              document.querySelector("#carrito-indicador");
+            const cantidadCarrito = ArrayCarrito2.length;
+            carritoIndicador.textContent = cantidadCarrito;
+          }
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "¡No tienes productos en el carrito!",
+          footer: '<a href="">Why do I have this issue?</a>',
+          backdrop: `
+            rgba(192, 148, 81, 0.1)
+          `,
+        });
+      }
     });
     updateCart(ArrayCarrito);
   }

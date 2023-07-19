@@ -1,3 +1,4 @@
+const ArrayCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
 // * Funciones
 export function updateCart(ArrayCarrito) {
   const carritoIndicador = document.querySelector("#carrito-indicador");
@@ -97,6 +98,106 @@ export function notiToastify(destino) {
     onClick: function () {}, // Callback after click
   }).showToast();
 }
+
+export function updateSummary(
+  suma,
+  subtotalElemento,
+  descuentoTotal,
+  totalElemento,
+  costoEnvio
+) {
+  subtotalElemento.textContent = suma;
+  let descuento = suma * 0.1;
+  descuentoTotal.textContent = descuento.toFixed(2);
+
+  let envio = suma > 500 ? "Gratis" : suma * 0.4;
+  envio = envio == "Gratis" ? "Gratis" : envio.toFixed(2);
+
+  let total =
+    envio == "Gratis" ? suma - descuento : suma + parseInt(envio) - descuento;
+
+  totalElemento.textContent = total.toFixed(2);
+  costoEnvio.textContent = envio;
+}
+
+export function emptySummary(containerSummary) {
+  containerSummary.innerHTML = `
+            <h3 class="color-2 size-medium_m pb-3">Resumen</h3>
+            <div class="carrito-resumen-calculo">
+              <p class="color-2 size-medium_s mb-2">Subtotal</p>
+              <p class="color-1 size-medium_s mb-2">
+                $ <span id="subtotal">0</span>
+              </p>
+            </div>
+            <div class="carrito-resumen-calculo">
+              <p class="color-2 size-medium_s mb-2">
+                Gastos de envío estimados
+              </p>
+              <p class="color-1 size-medium_s mb-2">
+                <span id="envio"></span>
+              </p>
+            </div>
+            <div class="carrito-resumen-calculo">
+              <p class="color-2 size-medium_s mb-2">Descuento total</p>
+              <p class="color-1 size-medium_s mb-4">
+                -$ <span id="descuento">0</span>
+              </p>
+            </div>
+            <div class="carrito-resumen-calculo-total">
+              <p class="color-2 size-medium_s mb-0">Total</p>
+              <p class="color-1 size-medium_s mb-0">
+                $ <span id="total">0</span>
+              </p>
+            </div>
+          `;
+}
+
+export function emptyCart(containerCarrito) {
+  containerCarrito.innerHTML = `
+    <div class="d-flex align-items-center justify-content-center pt-5">
+      <h4 class="color-3 size-medium_l text-center align-self-center pt-5">
+        No tienes productos en el carrito, ve a comprar
+      </h4>
+    </div>
+  `;
+}
+
+// Función para actualizar el precio y subtotal
+export const actualizarPrecio = (
+  cantidadElemento,
+  precioElemento,
+  subtotalElemento,
+  descuentoTotal,
+  totalElemento,
+  costoEnvio
+) => {
+  const cantidadSeleccionada = parseInt(cantidadElemento.value);
+  const precioOriginal = parseInt(precioElemento.dataset.precioOriginal);
+  const nuevoPrecio = precioOriginal * cantidadSeleccionada;
+  precioElemento.textContent = nuevoPrecio;
+
+  // Actualizar subtotal
+  let subtotal = 0;
+  const preciosElementos = document.querySelectorAll("#precio");
+  preciosElementos.forEach((elemento) => {
+    subtotal += parseInt(elemento.textContent);
+  });
+
+  updateSummary(
+    subtotal,
+    subtotalElemento,
+    descuentoTotal,
+    totalElemento,
+    costoEnvio
+  );
+};
+
+// Función para eliminar un artículo del carrito
+export const eliminarArticulo = (index) => {
+  ArrayCarrito.splice(index, 1);
+  localStorage.setItem("carrito", JSON.stringify(ArrayCarrito));
+  location.reload();
+};
 
 // * Funciones flecha
 export const sumar = (a, b) => a + b;
